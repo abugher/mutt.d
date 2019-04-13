@@ -14,7 +14,7 @@ Edit macros/subtract to target unwanted messages, and edit colors to
 match.
 
   cd
-  mv path/to/mutt.d .mutt.d
+  cp -r path/to/mutt.d/ .mutt.d/
   ln -s .mutt.d/muttrc .muttrc
   cat .mutt.d/mailcap >> .mailcap
   mutt
