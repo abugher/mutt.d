@@ -1,0 +1,54 @@
+# If your sendmail supports the -B8BITMIME flag, enable the following
+# set use_8bitmime
+
+set askcc
+set autoedit
+set auto_tag
+unset confirmappend
+set edit_headers
+set include             = "yes"
+set ispell              = "aspell check "
+set markers             = "no"
+set save_empty          = "no"
+set save_name
+# See macros for sorting control.
+#set sort                = "reverse-date-received"
+set forward_format      = "Fw: %s"
+
+set move                = "no"
+set wait_key            = "no"
+
+# Key spec is case insensitive.
+
+# vi-like paging
+#bind index \Cb	previous-page
+#bind index \Cf	next-page
+bind index \Cb	half-up
+bind index \Cf	half-down
+# Builtin:  1<enter>    to jump to first message.
+# Builtin:  *           to jump to last message.
+bind pager \Cb	half-up
+bind pager \Cf	half-down
+
+set editor="/usr/bin/vim -c 'set textwidth=72' -c 'set background=dark' -c 'set mouse=' -c 'set spell' "
+# These are intuitive, but conflict with next/prev message bindings.
+#bind pager j next-line
+#bind pager k previous-line
+bind pager G bottom
+
+# up and down keys
+bind pager <down> next-line
+bind pager <up> previous-line
+
+set header_cache = "~/.muttheaders"
+exec last-entry
+
+# These might be account-specific:
+set use_from            = "yes"
+#set mail_check          = 15
+#set timeout             = 15
+set imap_idle           = "yes"
+
+set record              = "="
+set postponed           = "=Drafts"
+set spoolfile           = "="

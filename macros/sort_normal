@@ -1,0 +1,2 @@
+set sort = date-received
+macro index v "<enter-command>source '.mutt.d/macros/sort_threaded'<enter>"

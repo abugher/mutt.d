@@ -1,0 +1,100 @@
+# This file contains passwords.  Be careful with it.
+#
+# Per-account stuff, including passwords, goes in this file.  This particular
+# instance will hold details for each of my three main personal accounts, as well
+# as facilities to switch among accounts quickly.
+
+
+# -- Initial Settings --
+
+  # This is identical to the contents of the account1 folder hook, but just
+  # setting the folder initially (as opposed to changing after startup) doesn't
+  # seem to invoke the hook.  Changes must be propogated to both places.
+
+  set \
+    realname      = "Aaron Bugher" \
+    use_from      = "yes" \
+    from          = "account1@gmail.com" \
+    folder        = "imaps://account1@imap.gmail.com/[Gmail]/All Mail" \
+    record        = "imaps://account1@imap.gmail.com/[Gmail]/Sent Mail" \
+    postponed     = "imaps://account1@imap.gmail.com/[Gmail]/Drafts" \
+    spoolfile     = "=" \
+    imap_pass     = "password" \
+    smtp_url      = "smtps://account1@smtp.gmail.com" \
+    smtp_pass     = "password"
+
+# -- /Initial Settings --
+
+
+# -- Set a folder hook for each account. --
+
+  # WARNING:  Note that while imap_pass and smtp_pass are set here,
+  # folder-hook's don't kick in until *after* a successful folder change.  That
+  # means that the password still needs to be specified in the macros that
+  # serve as account switching shortcuts, further down.
+  
+  # account1:
+  # 
+  # This must be kept identical to the options under "Initial Settings".
+  folder-hook "imaps://account1@imap.gmail.com/[Gmail]/All Mail" ' \
+    set \
+    realname      = "Aaron Bugher" \
+    use_from      = "yes" \
+    from          = "account1@gmail.com" \
+    folder        = "imaps://account1@imap.gmail.com/[Gmail]/All Mail" \
+    record        = "imaps://account1@imap.gmail.com/[Gmail]/Sent Mail" \
+    postponed     = "imaps://account1@imap.gmail.com/[Gmail]/Drafts" \
+    spoolfile     = "=" \
+    imap_pass     = "password" \
+    smtp_url      = "smtps://account1@smtp.gmail.com" \
+    smtp_pass     = "password" \
+  '
+
+  # account2:
+  folder-hook "imaps://account2@imap.gmail.com/[Gmail]/All Mail" ' \
+    set \
+    realname      = "Aaron Bugher"  \
+    use_from      = yes \
+    from          = "account2@gmail.com" \
+    folder        = "imaps://account2@imap.gmail.com/[Gmail]/All Mail" \
+    record        = "imaps://account2@imap.gmail.com/[Gmail]/Sent Mail" \
+    postponed     = "imaps://account2@imap.gmail.com/[Gmail]/Drafts" \
+    spoolfile     = "=" \
+    imap_pass     = "password" \
+    smtp_url      = "smtps://account2@smtp.gmail.com" \
+    smtp_pass     = "password" \
+  '
+
+  # account3:
+  folder-hook "imaps://account3@imap.gmail.com/[Gmail]/All Mail" ' \
+    set \
+    realname      = "Aaron Bugher"  \
+    use_from      = yes \
+    from          = "account3@gmail.com" \
+    folder        = "imaps://account3@imap.gmail.com/[Gmail]/All Mail" \
+    record        = "imaps://account3@imap.gmail.com/[Gmail]/Sent Mail" \
+    postponed     = "imaps://account3@imap.gmail.com/[Gmail]/Drafts" \
+    spoolfile     = "=" \
+    imap_pass     = "password" \
+    smtp_url      = "smtps://account3@smtp.gmail.com" \
+    smtp_pass     = "password" \
+  '
+
+# -- /Set a folder hook for each account. --
+
+
+# -- Account Switching --
+
+  # Make it easy to switch between accounts (<esc> 1, <esc> 2).
+
+  # %20 for a space in the name.  I haven't found a way to get it right with
+  # quoting or backslash escaping.
+
+  # Include the password in these lines.  The new passwords are assigned to
+  # imap_pass and smtp_pass in a folder-hook, which takes place AFTER the
+  # folder switch.
+  macro index \e1 <change-folder>imaps://account1:password@imap.gmail.com/[Gmail]/All%20Mail<enter>
+  macro index \e2 <change-folder>imaps://account2:password@imap.gmail.com/[Gmail]/All%20Mail<enter>
+  macro index \e3 <change-folder>imaps://account3:password@imap.gmail.com/[Gmail]/All%20Mail<enter>
+
+# -- /Account Switching --

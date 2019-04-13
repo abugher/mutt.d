@@ -1,0 +1,5 @@
+#text/plain; cat %s; copiousoutput; needsterminal
+text/html; html2text %s; copiousoutput; needsterminal
+#audio/*; mplayer %s; needsterminal
+#video/*; mplayer --volume 0 --osd-level 3 %s; needsterminal
+#image/*; feh %s; needsterminal

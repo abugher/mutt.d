@@ -1,0 +1,2 @@
+set sort = threads
+macro index v "<enter-command>source '.mutt.d/macros/sort_normal'<enter>"

@@ -1,0 +1,25 @@
+# .mutt.d/display
+#
+# This file controls how mutt displays data.  Set colors and sorting
+# preferences, show and hide headers, etc.
+
+# Prefer plain text.
+alternative_order text/plain text/enriched text/html text/calendar
+
+# If all we have is an HTML body, make the best of it.  This goes along with a
+# .mailcap entry defining how to deal with text/html.  (I like html2text.
+# Remember to use the "copiousoutput" mailcap flag.)
+auto_view text/html text/calendar
+
+#
+set date_format         = "%a %Y-%m-%d %R"
+set index_format        = " %Z  %-7C %D    %-60.60s    %-20.20F    %a"
+
+# Minimum interval between progress updates, in milliseconds:
+set time_inc = 500
+
+# Message headers:
+ignore *
+unignore Message-ID: Date: From: To: Cc: Subject:
+unhdr_order *
+hdr_order Message-ID: To: Cc: Date: From: Subject:
