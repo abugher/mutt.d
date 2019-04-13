@@ -1,2 +1,2 @@
-source ".mutt.d/macros/subtract"
-source ".mutt.d/macros/sort_normal"
+source "~/.mutt.d/macros/subtract"
+source "~/.mutt.d/macros/sort_normal"
