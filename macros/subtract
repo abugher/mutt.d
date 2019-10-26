@@ -6,11 +6,11 @@
 
 
 macro index - "\
-<tag-pattern>~f '\^username@domain\\.tld\$'<enter>\
-<tag-pattern>~f '\^username@'<enter>\
-<tag-pattern>~f '@domain\\.tld\$'<enter>\
+#<tag-pattern>~f '\^username@domain\\.tld\$'<enter>\
+#<tag-pattern>~f '\^username@'<enter>\
+#<tag-pattern>~f '@domain\\.tld\$'<enter>\
 \
-<untag-pattern>~f '\^user@domain\\.tld\$'<enter>\
+#<untag-pattern>~f '\^user@domain\\.tld\$'<enter>\
 \
 <tag-prefix-cond><save-message>=Spam<enter>\
 <sync-mailbox><enter><end-cond>\
