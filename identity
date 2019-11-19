@@ -15,7 +15,7 @@
     realname      = "Aaron Bugher" \
     use_from      = "yes" \
     from          = "account1@gmail.com" \
-    folder        = "imaps://account1@imap.gmail.com/[Gmail]/All Mail" \
+    folder        = "imaps://account1@imap.gmail.com/[Gmail]/INBOX" \
     record        = "imaps://account1@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://account1@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
@@ -36,12 +36,12 @@
   # account1:
   # 
   # This must be kept identical to the options under "Initial Settings".
-  folder-hook "imaps://account1@imap.gmail.com/[Gmail]/All Mail" ' \
+  folder-hook "imaps://account1@imap.gmail.com/[Gmail]/INBOX" ' \
     set \
     realname      = "Aaron Bugher" \
     use_from      = "yes" \
     from          = "account1@gmail.com" \
-    folder        = "imaps://account1@imap.gmail.com/[Gmail]/All Mail" \
+    folder        = "imaps://account1@imap.gmail.com/[Gmail]/INBOX" \
     record        = "imaps://account1@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://account1@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
@@ -51,12 +51,12 @@
   '
 
   # account2:
-  folder-hook "imaps://account2@imap.gmail.com/[Gmail]/All Mail" ' \
+  folder-hook "imaps://account2@imap.gmail.com/[Gmail]/INBOX" ' \
     set \
     realname      = "Aaron Bugher"  \
     use_from      = yes \
     from          = "account2@gmail.com" \
-    folder        = "imaps://account2@imap.gmail.com/[Gmail]/All Mail" \
+    folder        = "imaps://account2@imap.gmail.com/[Gmail]/INBOX" \
     record        = "imaps://account2@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://account2@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
@@ -66,12 +66,12 @@
   '
 
   # account3:
-  folder-hook "imaps://account3@imap.gmail.com/[Gmail]/All Mail" ' \
+  folder-hook "imaps://account3@imap.gmail.com/[Gmail]/INBOX" ' \
     set \
     realname      = "Aaron Bugher"  \
     use_from      = yes \
     from          = "account3@gmail.com" \
-    folder        = "imaps://account3@imap.gmail.com/[Gmail]/All Mail" \
+    folder        = "imaps://account3@imap.gmail.com/[Gmail]/INBOX" \
     record        = "imaps://account3@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://account3@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
