@@ -1,19 +1,21 @@
-# Per-account stuff goes in this file.  This particular instance will hold
-# details for each of my three main personal accounts, as well as facilities to
-# switch among accounts quickly.  This file formerly contained passwords, but
-# now should only contain references to a password manager.  (pass)
-
 # -- Overview --
 
+# Per-account stuff goes in this file.  This particular instance will hold
+# details for several gmail accounts, as well as facilities to switch among
+# accounts quickly.  This file formerly contained passwords, but now should
+# only contain references to a password manager.  (pass)
+
 # Gmail is assumed.
-# 
-# Replace the string "account1" with your primary username, in Initial
+
+# Setup:
+#
+# 1.  Replace the string "account1" with your primary username, in Initial
 # Settings, in Folder Hooks, and in Account Switching Shortcuts.
 #
-# Replace the string "account2" with an additional username, in Folder Hooks
-# and Account Switching Shortcuts, and so on for additional accounts.
+# 2.  Replace the string "account2" with an additional username, in Folder
+# Hooks and Account Switching Shortcuts, and so on for additional accounts.
 #
-# Use pass to set a password for each account.  Make sure the path in the
+# 3.  Use pass to set a password for each account.  Make sure the path in the
 # password store matches the path specified in the "pass show ..." command, in
 # all three sections.
 
