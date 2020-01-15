@@ -1,15 +1,30 @@
-# This file contains `pass show password`s.  Be careful with it.
+# Per-account stuff goes in this file.  This particular instance will hold
+# details for each of my three main personal accounts, as well as facilities to
+# switch among accounts quickly.  This file formerly contained passwords, but
+# now should only contain references to a password manager.  (pass)
+
+# -- Overview --
+
+# Gmail is assumed.
+# 
+# Replace the string "account1" with your primary username, in Initial
+# Settings, in Folder Hooks, and in Account Switching Shortcuts.
 #
-# Per-account stuff, including `pass show password`s, goes in this file.  This particular
-# instance will hold details for each of my three main personal accounts, as well
-# as facilities to switch among accounts quickly.
+# Replace the string "account2" with an additional username, in Folder Hooks
+# and Account Switching Shortcuts, and so on for additional accounts.
+#
+# Use pass to set a password for each account.  Make sure the path in the
+# password store matches the path specified in the "pass show ..." command, in
+# all three sections.
+
+# -- /Overview --
 
 
 # -- Initial Settings --
 
-  # This is identical to the contents of the account1 folder hook, but just
-  # setting the folder initially (as opposed to changing after startup) doesn't
-  # seem to invoke the hook.  Changes must be propogated to both places.
+  # This must be identical to the settings under Folder Hooks for account1.
+  # Just setting the folder initially (as opposed to changing after startup)
+  # doesn't trigger the folder hook.
 
   set \
     realname      = "Aaron Bugher" \
@@ -21,17 +36,12 @@
     spoolfile     = "=" \
     imap_pass     = "`pass show gmail/account1/password`" \
     smtp_url      = "smtps://account1@smtp.gmail.com" \
-    smtp_pass     = $imap_pass \
+    smtp_pass     = $imap_pass
 
 # -- /Initial Settings --
 
 
-# -- Set a folder hook for each account. --
-
-  # WARNING:  Note that while imap_pass and smtp_pass are set here,
-  # folder-hook's don't kick in until *after* a successful folder change.  That
-  # means that the `pass show password` still needs to be specified in the macros that
-  # serve as account switching shortcuts, further down.
+# -- Folder Hooks --
   
   # account1:
   # 
@@ -80,21 +90,21 @@
     smtp_pass     = $imap_pass \
   '
 
-# -- /Set a folder hook for each account. --
+# -- /Folder Hooks --
 
 
-# -- Account Switching --
+# -- Account Switching Shortcuts --
 
   # Make it easy to switch between accounts (<esc> 1, <esc> 2).
 
   # %20 for a space in the name.  I haven't found a way to get it right with
   # quoting or backslash escaping.
 
-  # Include the `pass show password` in these lines.  The new `pass show password`s are assigned to
-  # imap_pass and smtp_pass in a folder-hook, which takes place AFTER the
-  # folder switch.
+  # Password variables are set after the folder change.  These lines,
+  # specifying how to change folders, must specify the password in-line.
+
   macro index \e1 <change-folder>imaps://account1:`pass show gmail/account1/password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
   macro index \e2 <change-folder>imaps://account2:`pass show gmail/account2/password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
   macro index \e3 <change-folder>imaps://account3:`pass show gmail/account3/password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
 
-# -- /Account Switching --
+# -- /Account Switching Shortcuts --
