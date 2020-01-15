@@ -19,7 +19,7 @@
     record        = "imaps://account1@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://account1@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show password`" \
+    imap_pass     = "`pass show gmail/account1/password`" \
     smtp_url      = "smtps://account1@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
 
@@ -45,7 +45,7 @@
     record        = "imaps://account1@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://account1@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show password`" \
+    imap_pass     = "`pass show gmail/account1/password`" \
     smtp_url      = "smtps://account1@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
@@ -60,7 +60,7 @@
     record        = "imaps://account2@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://account2@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show password`" \
+    imap_pass     = "`pass show gmail/account2/password`" \
     smtp_url      = "smtps://account2@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
@@ -75,7 +75,7 @@
     record        = "imaps://account3@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://account3@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show password`" \
+    imap_pass     = "`pass show gmail/account3/password`" \
     smtp_url      = "smtps://account3@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
@@ -93,8 +93,8 @@
   # Include the `pass show password` in these lines.  The new `pass show password`s are assigned to
   # imap_pass and smtp_pass in a folder-hook, which takes place AFTER the
   # folder switch.
-  macro index \e1 <change-folder>imaps://account1:`pass show password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
-  macro index \e2 <change-folder>imaps://account2:`pass show password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
-  macro index \e3 <change-folder>imaps://account3:`pass show password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
+  macro index \e1 <change-folder>imaps://account1:`pass show gmail/account1/password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
+  macro index \e2 <change-folder>imaps://account2:`pass show gmail/account2/password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
+  macro index \e3 <change-folder>imaps://account3:`pass show gmail/account3/password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
 
 # -- /Account Switching --
