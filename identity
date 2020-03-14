@@ -31,64 +31,79 @@
   set \
     realname      = "Aaron Bugher" \
     use_from      = "yes" \
-    from          = "account1@gmail.com" \
-    folder        = "imaps://account1@imap.gmail.com/INBOX" \
-    record        = "imaps://account1@imap.gmail.com/[Gmail]/Sent Mail" \
-    postponed     = "imaps://account1@imap.gmail.com/[Gmail]/Drafts" \
+    from          = "aabugher@gmail.com" \
+    folder        = "imaps://aabugher@imap.gmail.com/INBOX" \
+    record        = "imaps://aabugher@imap.gmail.com/[Gmail]/Sent Mail" \
+    postponed     = "imaps://aabugher@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show gmail/account1/password`" \
-    smtp_url      = "smtps://account1@smtp.gmail.com" \
+    imap_pass     = "`pass show aaron/gmail/aabugher/app_password_mawg`" \
+    smtp_url      = "smtps://aabugher@smtp.gmail.com" \
     smtp_pass     = $imap_pass
 
 # -- /Initial Settings --
 
 
 # -- Folder Hooks --
-  
-  # account1:
+
+  # aabugher:
   # 
   # This must be kept identical to the options under "Initial Settings".
-  folder-hook "imaps://account1@imap.gmail.com/INBOX" ' \
+  folder-hook "imaps://aabugher@imap.gmail.com/INBOX" ' \
     set \
     realname      = "Aaron Bugher" \
     use_from      = "yes" \
-    from          = "account1@gmail.com" \
-    folder        = "imaps://account1@imap.gmail.com/INBOX" \
-    record        = "imaps://account1@imap.gmail.com/[Gmail]/Sent Mail" \
-    postponed     = "imaps://account1@imap.gmail.com/[Gmail]/Drafts" \
+    from          = "aabugher@gmail.com" \
+    folder        = "imaps://aabugher@imap.gmail.com/INBOX" \
+    record        = "imaps://aabugher@imap.gmail.com/[Gmail]/Sent Mail" \
+    postponed     = "imaps://aabugher@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show gmail/account1/password`" \
-    smtp_url      = "smtps://account1@smtp.gmail.com" \
+    imap_pass     = "`pass show aaron/gmail/aabugher/app_password_mawg`" \
+    smtp_url      = "smtps://aabugher@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
 
-  # account2:
-  folder-hook "imaps://account2@imap.gmail.com/INBOX" ' \
+  # spidermonkeyblues:
+  folder-hook "imaps://spidermonkeyblues@imap.gmail.com/INBOX" ' \
     set \
     realname      = "Aaron Bugher"  \
     use_from      = yes \
-    from          = "account2@gmail.com" \
-    folder        = "imaps://account2@imap.gmail.com/INBOX" \
-    record        = "imaps://account2@imap.gmail.com/[Gmail]/Sent Mail" \
-    postponed     = "imaps://account2@imap.gmail.com/[Gmail]/Drafts" \
+    from          = "spidermonkeyblues@gmail.com" \
+    folder        = "imaps://spidermonkeyblues@imap.gmail.com/INBOX" \
+    record        = "imaps://spidermonkeyblues@imap.gmail.com/[Gmail]/Sent Mail" \
+    postponed     = "imaps://spidermonkeyblues@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show gmail/account2/password`" \
-    smtp_url      = "smtps://account2@smtp.gmail.com" \
+    imap_pass     = "`pass show aaron/gmail/spidermonkeyblues/app_password_mawg`" \
+    smtp_url      = "smtps://spidermonkeyblues@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
 
-  # account3:
-  folder-hook "imaps://account3@imap.gmail.com/INBOX" ' \
+  # aabugher.banking:
+  folder-hook "imaps://aabugher.banking@imap.gmail.com/INBOX" ' \
     set \
     realname      = "Aaron Bugher"  \
     use_from      = yes \
-    from          = "account3@gmail.com" \
-    folder        = "imaps://account3@imap.gmail.com/INBOX" \
-    record        = "imaps://account3@imap.gmail.com/[Gmail]/Sent Mail" \
-    postponed     = "imaps://account3@imap.gmail.com/[Gmail]/Drafts" \
+    from          = "aabugher.banking@gmail.com" \
+    folder        = "imaps://aabugher.banking@imap.gmail.com/INBOX" \
+    record        = "imaps://aabugher.banking@imap.gmail.com/[Gmail]/Sent Mail" \
+    postponed     = "imaps://aabugher.banking@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show gmail/account3/password`" \
-    smtp_url      = "smtps://account3@smtp.gmail.com" \
+    imap_pass     = "`pass show aaron/gmail/aabugher.banking/password`" \
+    smtp_url      = "smtps://aabugher.banking@smtp.gmail.com" \
+    smtp_pass     = $imap_pass \
+  '
+
+  # aaronsandroidmarketaccount:
+  folder-hook "imaps://aaronsandroidmarketaccount@imap.gmail.com/INBOX" ' \
+    set \
+    realname      = "Aaron Bugher"  \
+    use_from      = yes \
+    from          = "aaronsandroidmarketaccount@gmail.com" \
+    folder        = "imaps://aaronsandroidmarketaccount@imap.gmail.com/INBOX" \
+    record        = "imaps://aaronsandroidmarketaccount@imap.gmail.com/[Gmail]/Sent Mail" \
+    postponed     = "imaps://aaronsandroidmarketaccount@imap.gmail.com/[Gmail]/Drafts" \
+    spoolfile     = "=" \
+    imap_pass     = "`pass show aaron/gmail/aaronsandroidmarketaccount/app_password_mawg`" \
+    smtp_url      = "smtps://aaronsandroidmarketaccount@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
 
@@ -105,8 +120,9 @@
   # Password variables are set after the folder change.  These lines,
   # specifying how to change folders, must specify the password in-line.
 
-  macro index \e1 <change-folder>imaps://account1:`pass show gmail/account1/password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
-  macro index \e2 <change-folder>imaps://account2:`pass show gmail/account2/password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
-  macro index \e3 <change-folder>imaps://account3:`pass show gmail/account3/password`@imap.gmail.com/[Gmail]/All%20Mail<enter>
+  macro index \e1 <change-folder>imaps://aabugher:`pass show aaron/gmail/aabugher/app_password_mawg`@imap.gmail.com/INBOX<enter>
+  macro index \e2 <change-folder>imaps://spidermonkeyblues:`pass show aaron/gmail/spidermonkeyblues/app_password_mawg`@imap.gmail.com/INBOX<enter>
+  macro index \e3 <change-folder>imaps://aabugher.banking:`pass show aaron/gmail/aabugher.banking/password`@imap.gmail.com/INBOX<enter>
+  macro index \e4 <change-folder>imaps://aaronsandroidmarketaccount:`pass show aaron/gmail/aaronsandroidmarketaccount/app_password_mawg`@imap.gmail.com/INBOX<enter>
 
 # -- /Account Switching Shortcuts --
