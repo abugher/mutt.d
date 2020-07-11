@@ -36,9 +36,9 @@
     record        = "imaps://aabugher@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://aabugher@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show aaron/gmail/aabugher/app_password_mawg`" \
+    imap_pass     = $pass_aabugher \
+    smtp_pass     = $imap_pass \
     smtp_url      = "smtps://aabugher@smtp.gmail.com" \
-    smtp_pass     = $imap_pass
 
 # -- /Initial Settings --
 
@@ -57,7 +57,7 @@
     record        = "imaps://aabugher@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://aabugher@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show aaron/gmail/aabugher/app_password_mawg`" \
+    imap_pass     = $pass_aabugher \
     smtp_url      = "smtps://aabugher@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
@@ -72,7 +72,7 @@
     record        = "imaps://spidermonkeyblues@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://spidermonkeyblues@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show aaron/gmail/spidermonkeyblues/app_password_mawg`" \
+    imap_pass     = $pass_smb \
     smtp_url      = "smtps://spidermonkeyblues@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
@@ -87,7 +87,7 @@
     record        = "imaps://aabugher.banking@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://aabugher.banking@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show aaron/gmail/aabugher.banking/password`" \
+    imap_pass     = $pass_banking \
     smtp_url      = "smtps://aabugher.banking@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
@@ -102,7 +102,7 @@
     record        = "imaps://aaronsandroidmarketaccount@imap.gmail.com/[Gmail]/Sent Mail" \
     postponed     = "imaps://aaronsandroidmarketaccount@imap.gmail.com/[Gmail]/Drafts" \
     spoolfile     = "=" \
-    imap_pass     = "`pass show aaron/gmail/aaronsandroidmarketaccount/app_password_mawg`" \
+    imap_pass     = $pass_market \
     smtp_url      = "smtps://aaronsandroidmarketaccount@smtp.gmail.com" \
     smtp_pass     = $imap_pass \
   '
