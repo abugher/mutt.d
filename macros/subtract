@@ -1,17 +1,19 @@
 # "Subtract" the noise with the minus key.
 
-# Test patterns and commands by binding to the underscore key:
-# 
-#   macro index _ "<tag-pattern>~s '\^subject\$'<enter>"
-
+# Update the colors file when you update this file.
 
 macro index - "\
-#<tag-pattern>~f '\^username@domain\\.tld\$'<enter>\
-#<tag-pattern>~f '\^username@'<enter>\
-#<tag-pattern>~f '@domain\\.tld\$'<enter>\
+<tag-pattern>~f '\^auto-confirm@amazon\.com\$'<enter>\
+<tag-pattern>~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Your bill is ready to view\$'<enter>\
+<tag-pattern>~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Thank you for your recent payment\$'<enter>\
+<tag-pattern>~f '\^support@eaze\.com\$' ~s '\^Your order was delivered,'<enter>\
+<tag-pattern>~f '@23andme\.com\$'<enter>\
+<tag-pattern>~f '\^info@comms\.yahoo\.net\$'<enter>\
+<tag-pattern>~f '\^no-reply@amazon\.com\$' ~s '\^Thank you for reviewing'<enter>\
+<tag-pattern>~f '\^kp-donotreply-np@kp\.org\$' ! ~s 'your'<enter>\
 \
-#<untag-pattern>~f '\^user@domain\\.tld\$'<enter>\
+<untag-pattern>~f '\^rlbugher@gmail\.com\$'<enter>\
 \
-<tag-prefix-cond><save-message>=Spam<enter>\
+<tag-prefix-cond><save-message>=Trash<enter>\
 <sync-mailbox><enter><end-cond>\
 "

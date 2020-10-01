@@ -3,6 +3,6 @@
 export pass_aabugher="$(pass show aaron/gmail/aabugher/app_password_mawg)"
 export pass_smb="$(pass show aaron/gmail/spidermonkeyblues/app_password_mawg)"
 export pass_market="$(pass show aaron/gmail/aaronsandroidmarketaccount/app_password_mawg)"
-export pass_banking="$(pass show aaron/gmail/aabugher.banking/password)"
+export pass_banking="$(pass show aaron/gmail/aabugher.banking/app_password_mawg)"
 
 /usr/bin/mutt

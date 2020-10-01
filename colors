@@ -1,20 +1,25 @@
-# Colors:
+# Color key:
 #
 #   magenta:    delete - targeted by "subtract" macro
 #   cyan:       read subject
 #   green:      skim content
 #   red         read content
 #
-# Order (last match wins):
+# File layout (last match wins):
 #
 #   colorless:  Attributes for colorless display.
-#   cyan 1:     Apply by default.  (Cover messages to lists I am on but don't care about.)
-#   green 1:    Mark messages to important lists.
-#   magenta 1:  Mark messages to be deleted, unless they're for me.
-#   red 1:      Mark messages (regarded as) directly to me.
-#   cyan 2:     Mark messages to hundreds of people as not being direct communication.
-#   green 2:    Mark messages from lists as not being directly to me.
-#   magenta 2:  Mark messages to be deleted, even if they're for me.
+#
+#   cyan 1:     Color all messages.  (Unless they meet other conditions.)
+#   green 1:    Color messages to lists.  (Unless they are to me.
+#   magenta 1:  Color messages targeted for deletion.  (Unless they are to me.
+#
+#   red 1:      Color messages directly to me.
+#
+#   cyan 2:     Color messages to hundreds of people as not being direct communication.  (Even if they are to me.)
+#   green 2:    Color messages from lists as not being directly to me.  (Even if they are to me.)
+#   magenta 2:  Color messages targeted for deletion.  (Even if they are to me.)
+
+# Update macros/subtract when you update this file.
 
 # colorless:
 mono header standout ^(From|Subject|Date):
@@ -24,26 +29,42 @@ mono quoted bold
 color index cyan default ~U
 
 # green 1:
-color index green default '~U ~c account1@gmail\.com'
-color index green default '~U ~c account2@gmail\.com'
-color index green default '~U ~c account3@gmail\.com'
+color index green default '~U ~c aabugher@gmail\.com'
+color index green default '~U ~c spidermonkeyblues@gmail\.com'
+color index green default '~U ~c aabugher\.banking@gmail\.com'
+color index green default '~U ~f billing@linode\.com'
 
 # magenta 1:
-#color index magenta default "~U ~f '\^user@domain\\.tld\$'"
+#color index magenta default "~U ~f '\^user@domain\.tld\$'"
 
 # red 1:
-color index red default '~U ~t account1@gmail\.com'
-color index red default '~U ~t account2@gmail\.com'
-color index red default '~U ~t account3@gmail\.com'
+color index red default '~U ~t aabugher@gmail\.com'
+color index red default '~U ~t spidermonkeyblues@gmail\.com'
+color index red default '~U ~t aabugher\.banking@gmail\.com'
 
 # cyan 2:
-#color index magenta default "~U ~f '\^user@domain\\.tld\$'"
+color index cyan default "~U ~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Reminder that your automatic payment will process soon\$'"
+color index cyan default "~U ~f '\^spa@alerts\.comcast\.net\$' ~s '\^Notification of Claimed Copyright Infringement'"
+color index cyan default "~U ~f '\^shipment-tracking@amazon\.com\$'"
+color index cyan default "~U ~f 'billing@linode\.com' ~s '\^Linode - Invoice '"
+color index cyan default "~U ~f 'billing@linode\.com' ~s '\^Linode.com: Payment Receipt'"
+color index cyan default "~U ~f '\^no-reply@youtube\.com\$'"
+color index cyan default "~U ~f '\^nagios@neuron-mail\.neuronpointer\.net\$'"
 
 # green 2:
-#color index green default "~U ~f 'nagios@neuron-mail\.no-ip\.org'"
+color index green default "~U ~f '\^no-reply@rentcafe\.com\$'"
+color index green default "~U ~f '\^spa@alerts\.comcast\.net\$' ~s '\^XFINITY Internet DMCA Policy Repeat Infringer Alert'"
+color index green default "~U ~f '\^venmo@venmo\.com\$'"
 
 # magenta 2:
-#color index magenta default "~U ~s '\^spam\$'"
+color index magenta default "~U ~f '\^auto-confirm@amazon\.com\$'"
+color index magenta default "~U ~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Your bill is ready to view\$'"
+color index magenta default "~U ~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Thank you for your recent payment\$'"
+color index magenta default "~U ~f '\^support@eaze\.com\$' ~s '\^Your order was delivered,'"
+color index magenta default "~U ~f '@23andme\.com\$'"
+color index magenta default "~U ~f '\^info@comms\.yahoo\.net\$'"
+color index magenta default "~U ~f '\^no-reply@amazon\.com\$' ~s '\^Thank you for reviewing'"
+color index magenta default "~U ~f '\^kp-donotreply-np@kp\.org\$' ! ~s 'your'"
 
 # Bright red for unusually important topics:
 #color index brightred default '~U ~s "money"'
