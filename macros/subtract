@@ -14,6 +14,8 @@ macro index - "\
 \
 <untag-pattern>~f '\^rlbugher@gmail\.com\$'<enter>\
 \
-<tag-prefix-cond><save-message>=Trash<enter>\
-<sync-mailbox><enter><end-cond>\
+<tag-prefix-cond>\
+<save-message>=Trash<enter>\
+<sync-mailbox><enter>\
+<end-cond>\
 "
