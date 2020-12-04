@@ -10,12 +10,12 @@
 #   colorless:  Attributes for colorless display.
 #
 #   cyan 1:     Color all messages.  (Unless they meet other conditions.)
-#   green 1:    Color messages to lists.  (Unless they are to me.
-#   magenta 1:  Color messages targeted for deletion.  (Unless they are to me.
+#   green 1:    Color messages to lists.  (Unless they are to me.)
+#   magenta 1:  Color messages targeted for deletion.  (Unless they are to me.)
 #
 #   red 1:      Color messages directly to me.
 #
-#   cyan 2:     Color messages to hundreds of people as not being direct communication.  (Even if they are to me.)
+#   cyan 2:     Color messages as not being direct communication.  (Even if they are to me.)
 #   green 2:    Color messages from lists as not being directly to me.  (Even if they are to me.)
 #   magenta 2:  Color messages targeted for deletion.  (Even if they are to me.)
 
@@ -32,7 +32,6 @@ color index cyan default ~U
 color index green default '~U ~c aabugher@gmail\.com'
 color index green default '~U ~c spidermonkeyblues@gmail\.com'
 color index green default '~U ~c aabugher\.banking@gmail\.com'
-color index green default '~U ~f billing@linode\.com'
 
 # magenta 1:
 #color index magenta default "~U ~f '\^user@domain\.tld\$'"
@@ -46,8 +45,6 @@ color index red default '~U ~t aabugher\.banking@gmail\.com'
 color index cyan default "~U ~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Reminder that your automatic payment will process soon\$'"
 color index cyan default "~U ~f '\^spa@alerts\.comcast\.net\$' ~s '\^Notification of Claimed Copyright Infringement'"
 color index cyan default "~U ~f '\^shipment-tracking@amazon\.com\$'"
-color index cyan default "~U ~f 'billing@linode\.com' ~s '\^Linode - Invoice '"
-color index cyan default "~U ~f 'billing@linode\.com' ~s '\^Linode.com: Payment Receipt'"
 color index cyan default "~U ~f '\^no-reply@youtube\.com\$'"
 color index cyan default "~U ~f '\^nagios@neuron-mail\.neuronpointer\.net\$'"
 
@@ -65,6 +62,9 @@ color index magenta default "~U ~f '@23andme\.com\$'"
 color index magenta default "~U ~f '\^info@comms\.yahoo\.net\$'"
 color index magenta default "~U ~f '\^no-reply@amazon\.com\$' ~s '\^Thank you for reviewing'"
 color index magenta default "~U ~f '\^kp-donotreply-np@kp\.org\$' ! ~s 'your'"
+color index magenta default "~U ~f '\^memberservices@smcu\.org\$' ~s '\^Your monthly eStatement is now available\$'"
+color index magenta default "~U ~f '\^billing@linode\.com\$' ~s '\^Linode - Invoice'"
+color index magenta default "~U ~f '\^billing@linode\.com\$' ~s '\^Linode.com: Payment Receipt'"
 
 # Bright red for unusually important topics:
 #color index brightred default '~U ~s "money"'
