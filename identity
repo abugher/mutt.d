@@ -120,9 +120,9 @@
   # Password variables are set after the folder change.  These lines,
   # specifying how to change folders, must specify the password in-line.
 
-  macro index \e1 <change-folder>imaps://aabugher:`pass show aaron/gmail/aabugher/app_password_mawg`@imap.gmail.com/[Gmail]/All Mail<enter>
-  macro index \e2 <change-folder>imaps://spidermonkeyblues:`pass show aaron/gmail/spidermonkeyblues/app_password_mawg`@imap.gmail.com/[Gmail]/All Mail<enter>
-  macro index \e3 <change-folder>imaps://aabugher.banking:`pass show aaron/gmail/aabugher.banking/app_password_mawg`@imap.gmail.com/[Gmail]/All Mail<enter>
-  macro index \e4 <change-folder>imaps://aaronsandroidmarketaccount:`pass show aaron/gmail/aaronsandroidmarketaccount/app_password_mawg`@imap.gmail.com/[Gmail]/All Mail<enter>
+  macro index \e1 <change-folder>imaps://aabugher:`pass show aaron/gmail/aabugher/app_password_mawg`@imap.gmail.com/[Gmail]/All"%20"Mail<enter>
+  macro index \e2 <change-folder>imaps://spidermonkeyblues:`pass show aaron/gmail/spidermonkeyblues/app_password_mawg`@imap.gmail.com/[Gmail]/All"%20"Mail<enter>
+  macro index \e3 <change-folder>imaps://aabugher.banking:`pass show aaron/gmail/aabugher.banking/app_password_mawg`@imap.gmail.com/[Gmail]/All"%20"Mail<enter>
+  macro index \e4 <change-folder>imaps://aaronsandroidmarketaccount:`pass show aaron/gmail/aaronsandroidmarketaccount/app_password_mawg`@imap.gmail.com/[Gmail]/All"%20"Mail<enter>
 
 # -- /Account Switching Shortcuts --
