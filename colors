@@ -47,11 +47,13 @@ color index cyan default "~U ~f '\^spa@alerts\.comcast\.net\$' ~s '\^Notificatio
 color index cyan default "~U ~f '\^shipment-tracking@amazon\.com\$'"
 color index cyan default "~U ~f '\^no-reply@youtube\.com\$'"
 color index cyan default "~U ~f '\^nagios@neuron-mail\.neuronpointer\.net\$'"
+color index cyan default "~U ~f '\^donotreply@rxorder\.walgreens\.com\$'"
 
 # green 2:
 color index green default "~U ~f '\^no-reply@rentcafe\.com\$'"
 color index green default "~U ~f '\^spa@alerts\.comcast\.net\$' ~s '\^XFINITY Internet DMCA Policy Repeat Infringer Alert'"
 color index green default "~U ~f '\^venmo@venmo\.com\$'"
+color index green default "~U ~f '\^email@cgpgrey\.com\$'"
 
 # magenta 2:
 color index magenta default "~U ~f '\^auto-confirm@amazon\.com\$'"

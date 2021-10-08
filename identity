@@ -2,127 +2,90 @@
 
 # Per-account stuff goes in this file.  This particular instance will hold
 # details for several gmail accounts, as well as facilities to switch among
-# accounts quickly.  This file formerly contained passwords, but now should
-# only contain references to a password manager.  (pass)
+# accounts quickly.
 
 # Gmail is assumed.
 
-# Setup:
-#
-# 1.  Replace the string "account1" with your primary username, in Initial
-# Settings, in Folder Hooks, and in Account Switching Shortcuts.
-#
-# 2.  Replace the string "account2" with an additional username, in Folder
-# Hooks and Account Switching Shortcuts, and so on for additional accounts.
-#
-# 3.  Use pass to set a password for each account.  Make sure the path in the
-# password store matches the path specified in the "pass show ..." command, in
-# all three sections.
+# The password manager "pass" is assumed, along with some password paths.
+
+# Mutt configuration does not seem to allow declaration of new variables, but
+# respects environmental variables.  If you see a variable used that was never
+# set, that's why.  The wrapper script for mutt included in this repo should
+# contain those definitions.
 
 # -- /Overview --
 
 
-# -- Initial Settings --
+# -- Global Settings --
 
-  # This must be identical to the settings under Folder Hooks for account1.
-  # Just setting the folder initially (as opposed to changing after startup)
-  # doesn't trigger the folder hook.
+  set realname  = "Aaron Bugher"
+  # Set a from address header in which to use the real name.
+  set use_from  = "yes"
 
-  set \
-    realname      = "Aaron Bugher" \
-    use_from      = "yes" \
-    from          = "aabugher@gmail.com" \
-    folder        = "imaps://aabugher@imap.gmail.com/[Gmail]/All Mail" \
-    record        = "imaps://aabugher@imap.gmail.com/[Gmail]/Sent Mail" \
-    postponed     = "imaps://aabugher@imap.gmail.com/[Gmail]/Drafts" \
-    spoolfile     = "=" \
-    imap_pass     = $pass_aabugher \
-    smtp_pass     = $imap_pass \
-    smtp_url      = "smtps://aabugher@smtp.gmail.com" \
-
-# -- /Initial Settings --
+# -- /Global Settings --
 
 
-# -- Folder Hooks --
+# -- Per Account Settings --
 
   # aabugher:
-  # 
-  # This must be kept identical to the options under "Initial Settings".
-  folder-hook "imaps://aabugher@imap.gmail.com/[Gmail]/All Mail" ' \
-    set \
-    realname      = "Aaron Bugher" \
-    use_from      = "yes" \
-    from          = "aabugher@gmail.com" \
-    folder        = "imaps://aabugher@imap.gmail.com/[Gmail]/All Mail" \
-    record        = "imaps://aabugher@imap.gmail.com/[Gmail]/Sent Mail" \
-    postponed     = "imaps://aabugher@imap.gmail.com/[Gmail]/Drafts" \
-    spoolfile     = "=" \
-    imap_pass     = $pass_aabugher \
-    smtp_url      = "smtps://aabugher@smtp.gmail.com" \
-    smtp_pass     = $imap_pass \
-  '
+  folder-hook 'aabugher'   "set from       = $from_aabugher"
+  folder-hook 'aabugher'   "set folder     = $folder_escaped_aabugher"
+  folder-hook 'aabugher'   "set record     = $record_escaped_aabugher"
+  folder-hook 'aabugher'   "set postponed  = $postponed_aabugher"
+  folder-hook 'aabugher'   "set imap_pass  = $pass_aabugher"
+  folder-hook 'aabugher'   "set smtp_pass  = $pass_aabugher"
+  folder-hook 'aabugher'   "set smtp_url   = $smtp_url_aabugher"
+  # mailboxes $folder_aabugher
 
   # spidermonkeyblues:
-  folder-hook "imaps://spidermonkeyblues@imap.gmail.com/[Gmail]/All Mail" ' \
-    set \
-    realname      = "Aaron Bugher"  \
-    use_from      = yes \
-    from          = "spidermonkeyblues@gmail.com" \
-    folder        = "imaps://spidermonkeyblues@imap.gmail.com/[Gmail]/All Mail" \
-    record        = "imaps://spidermonkeyblues@imap.gmail.com/[Gmail]/Sent Mail" \
-    postponed     = "imaps://spidermonkeyblues@imap.gmail.com/[Gmail]/Drafts" \
-    spoolfile     = "=" \
-    imap_pass     = $pass_smb \
-    smtp_url      = "smtps://spidermonkeyblues@smtp.gmail.com" \
-    smtp_pass     = $imap_pass \
-  '
+  folder-hook 'spidermonkeyblues'        "set from       = $from_smb"
+  folder-hook 'spidermonkeyblues'        "set folder     = $folder_escaped_smb"
+  folder-hook 'spidermonkeyblues'        "set record     = $record_escaped_smb"
+  folder-hook 'spidermonkeyblues'        "set postponed  = $postponed_smb"
+  folder-hook 'spidermonkeyblues'        "set imap_pass  = $pass_smb"
+  folder-hook 'spidermonkeyblues'        "set smtp_pass  = $pass_smb"
+  folder-hook 'spidermonkeyblues'        "set smtp_url   = $smtp_url_smb"
+  # mailboxes $folder_smb
 
   # aabugher.banking:
-  folder-hook "imaps://aabugher.banking@imap.gmail.com/[Gmail]/All Mail" ' \
-    set \
-    realname      = "Aaron Bugher"  \
-    use_from      = yes \
-    from          = "aabugher.banking@gmail.com" \
-    folder        = "imaps://aabugher.banking@imap.gmail.com/[Gmail]/All Mail" \
-    record        = "imaps://aabugher.banking@imap.gmail.com/[Gmail]/Sent Mail" \
-    postponed     = "imaps://aabugher.banking@imap.gmail.com/[Gmail]/Drafts" \
-    spoolfile     = "=" \
-    imap_pass     = $pass_banking \
-    smtp_url      = "smtps://aabugher.banking@smtp.gmail.com" \
-    smtp_pass     = $imap_pass \
-  '
+  folder-hook 'aabugher.banking'    "set from       = $from_banking"
+  folder-hook 'aabugher.banking'    "set folder     = $folder_escaped_banking"
+  folder-hook 'aabugher.banking'    "set record     = $record_escaped_banking"
+  folder-hook 'aabugher.banking'    "set postponed  = $postponed_banking"
+  folder-hook 'aabugher.banking'    "set imap_pass  = $pass_banking"
+  folder-hook 'aabugher.banking'    "set smtp_pass  = $pass_banking"
+  folder-hook 'aabugher.banking'    "set smtp_url   = $smtp_url_banking"
+  # mailboxes $folder_banking
 
   # aaronsandroidmarketaccount:
-  folder-hook "imaps://aaronsandroidmarketaccount@imap.gmail.com/[Gmail]/All Mail" ' \
-    set \
-    realname      = "Aaron Bugher"  \
-    use_from      = yes \
-    from          = "aaronsandroidmarketaccount@gmail.com" \
-    folder        = "imaps://aaronsandroidmarketaccount@imap.gmail.com/[Gmail]/All Mail" \
-    record        = "imaps://aaronsandroidmarketaccount@imap.gmail.com/[Gmail]/Sent Mail" \
-    postponed     = "imaps://aaronsandroidmarketaccount@imap.gmail.com/[Gmail]/Drafts" \
-    spoolfile     = "=" \
-    imap_pass     = $pass_market \
-    smtp_url      = "smtps://aaronsandroidmarketaccount@smtp.gmail.com" \
-    smtp_pass     = $imap_pass \
-  '
+  folder-hook 'aaronsandroidmarketaccount'     "set from       = $from_market"
+  folder-hook 'aaronsandroidmarketaccount'     "set folder     = $folder_escaped_market"
+  folder-hook 'aaronsandroidmarketaccount'     "set record     = $record_escaped_market"
+  folder-hook 'aaronsandroidmarketaccount'     "set postponed  = $postponed_market"
+  folder-hook 'aaronsandroidmarketaccount'     "set imap_pass  = $pass_market"
+  folder-hook 'aaronsandroidmarketaccount'     "set smtp_pass  = $pass_market"
+  folder-hook 'aaronsandroidmarketaccount'     "set smtp_url   = $smtp_url_market"
+  # mailboxes $folder_market
 
-# -- /Folder Hooks --
+# -- /Per Account Settings --
 
 
 # -- Account Switching Shortcuts --
 
   # Make it easy to switch between accounts (<esc> 1, <esc> 2).
 
-  # %20 for a space in the name.  I haven't found a way to get it right with
-  # quoting or backslash escaping.
-
-  # Password variables are set after the folder change.  These lines,
-  # specifying how to change folders, must specify the password in-line.
-
-  macro index \e1 <change-folder>imaps://aabugher:`pass show aaron/gmail/aabugher/app_password_mawg`@imap.gmail.com/[Gmail]/All"%20"Mail<enter>
-  macro index \e2 <change-folder>imaps://spidermonkeyblues:`pass show aaron/gmail/spidermonkeyblues/app_password_mawg`@imap.gmail.com/[Gmail]/All"%20"Mail<enter>
-  macro index \e3 <change-folder>imaps://aabugher.banking:`pass show aaron/gmail/aabugher.banking/app_password_mawg`@imap.gmail.com/[Gmail]/All"%20"Mail<enter>
-  macro index \e4 <change-folder>imaps://aaronsandroidmarketaccount:`pass show aaron/gmail/aaronsandroidmarketaccount/app_password_mawg`@imap.gmail.com/[Gmail]/All"%20"Mail<enter>
+  macro index \e1 <change-folder>$folder_escaped_aabugher<enter>
+  macro index \e2 <change-folder>$folder_escaped_smb<enter>
+  macro index \e3 <change-folder>$folder_escaped_banking<enter>
+  macro index \e4 <change-folder>$folder_escaped_market<enter>
 
 # -- /Account Switching Shortcuts --
+
+
+# -- Initial Account Selection --
+
+  # This must happen after the folder-hook for this account is defined, or
+  # nothing works.
+  set folder    = $folder_aabugher
+
+# -- /Initial Account Selection --
