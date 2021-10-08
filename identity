@@ -28,43 +28,43 @@
 # -- Per Account Settings --
 
   # aabugher:
-  folder-hook 'aabugher'   "set from       = $from_aabugher"
-  folder-hook 'aabugher'   "set folder     = $folder_escaped_aabugher"
-  folder-hook 'aabugher'   "set record     = $record_escaped_aabugher"
-  folder-hook 'aabugher'   "set postponed  = $postponed_aabugher"
-  folder-hook 'aabugher'   "set imap_pass  = $pass_aabugher"
-  folder-hook 'aabugher'   "set smtp_pass  = $pass_aabugher"
-  folder-hook 'aabugher'   "set smtp_url   = $smtp_url_aabugher"
+  folder-hook 'aabugher'                        "set from       = $from_aabugher"
+  folder-hook 'aabugher'                        "set folder     = $folder_escaped_aabugher"
+  folder-hook 'aabugher'                        "set record     = $record_escaped_aabugher"
+  folder-hook 'aabugher'                        "set postponed  = $postponed_aabugher"
+  folder-hook 'aabugher'                        "set imap_pass  = $pass_aabugher"
+  folder-hook 'aabugher'                        "set smtp_pass  = $pass_aabugher"
+  folder-hook 'aabugher'                        "set smtp_url   = $smtp_url_aabugher"
   # mailboxes $folder_aabugher
 
   # spidermonkeyblues:
-  folder-hook 'spidermonkeyblues'        "set from       = $from_smb"
-  folder-hook 'spidermonkeyblues'        "set folder     = $folder_escaped_smb"
-  folder-hook 'spidermonkeyblues'        "set record     = $record_escaped_smb"
-  folder-hook 'spidermonkeyblues'        "set postponed  = $postponed_smb"
-  folder-hook 'spidermonkeyblues'        "set imap_pass  = $pass_smb"
-  folder-hook 'spidermonkeyblues'        "set smtp_pass  = $pass_smb"
-  folder-hook 'spidermonkeyblues'        "set smtp_url   = $smtp_url_smb"
+  folder-hook 'spidermonkeyblues'               "set from       = $from_smb"
+  folder-hook 'spidermonkeyblues'               "set folder     = $folder_escaped_smb"
+  folder-hook 'spidermonkeyblues'               "set record     = $record_escaped_smb"
+  folder-hook 'spidermonkeyblues'               "set postponed  = $postponed_smb"
+  folder-hook 'spidermonkeyblues'               "set imap_pass  = $pass_smb"
+  folder-hook 'spidermonkeyblues'               "set smtp_pass  = $pass_smb"
+  folder-hook 'spidermonkeyblues'               "set smtp_url   = $smtp_url_smb"
   # mailboxes $folder_smb
 
   # aabugher.banking:
-  folder-hook 'aabugher.banking'    "set from       = $from_banking"
-  folder-hook 'aabugher.banking'    "set folder     = $folder_escaped_banking"
-  folder-hook 'aabugher.banking'    "set record     = $record_escaped_banking"
-  folder-hook 'aabugher.banking'    "set postponed  = $postponed_banking"
-  folder-hook 'aabugher.banking'    "set imap_pass  = $pass_banking"
-  folder-hook 'aabugher.banking'    "set smtp_pass  = $pass_banking"
-  folder-hook 'aabugher.banking'    "set smtp_url   = $smtp_url_banking"
+  folder-hook 'aabugher.banking'                "set from       = $from_banking"
+  folder-hook 'aabugher.banking'                "set folder     = $folder_escaped_banking"
+  folder-hook 'aabugher.banking'                "set record     = $record_escaped_banking"
+  folder-hook 'aabugher.banking'                "set postponed  = $postponed_banking"
+  folder-hook 'aabugher.banking'                "set imap_pass  = $pass_banking"
+  folder-hook 'aabugher.banking'                "set smtp_pass  = $pass_banking"
+  folder-hook 'aabugher.banking'                "set smtp_url   = $smtp_url_banking"
   # mailboxes $folder_banking
 
   # aaronsandroidmarketaccount:
-  folder-hook 'aaronsandroidmarketaccount'     "set from       = $from_market"
-  folder-hook 'aaronsandroidmarketaccount'     "set folder     = $folder_escaped_market"
-  folder-hook 'aaronsandroidmarketaccount'     "set record     = $record_escaped_market"
-  folder-hook 'aaronsandroidmarketaccount'     "set postponed  = $postponed_market"
-  folder-hook 'aaronsandroidmarketaccount'     "set imap_pass  = $pass_market"
-  folder-hook 'aaronsandroidmarketaccount'     "set smtp_pass  = $pass_market"
-  folder-hook 'aaronsandroidmarketaccount'     "set smtp_url   = $smtp_url_market"
+  folder-hook 'aaronsandroidmarketaccount'      "set from       = $from_market"
+  folder-hook 'aaronsandroidmarketaccount'      "set folder     = $folder_escaped_market"
+  folder-hook 'aaronsandroidmarketaccount'      "set record     = $record_escaped_market"
+  folder-hook 'aaronsandroidmarketaccount'      "set postponed  = $postponed_market"
+  folder-hook 'aaronsandroidmarketaccount'      "set imap_pass  = $pass_market"
+  folder-hook 'aaronsandroidmarketaccount'      "set smtp_pass  = $pass_market"
+  folder-hook 'aaronsandroidmarketaccount'      "set smtp_url   = $smtp_url_market"
   # mailboxes $folder_market
 
 # -- /Per Account Settings --
