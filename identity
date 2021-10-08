@@ -1,8 +1,8 @@
 # -- Overview --
 
-# Per-account stuff goes in this file.  This particular instance will hold
-# details for several gmail accounts, as well as facilities to switch among
-# accounts quickly.
+# Per-account and per-user stuff goes in this file.  This particular instance
+# will hold details for several gmail accounts, as well as facilities to switch
+# among accounts quickly.
 
 # Gmail is assumed.
 
