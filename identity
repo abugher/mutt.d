@@ -16,16 +16,12 @@
 # -- /Overview --
 
 
-# -- Global Settings --
-
-  set realname  = "Aaron Bugher"
-  # Set a from address header in which to use the real name.
-  set use_from  = "yes"
-
-# -- /Global Settings --
-
-
 # -- Per Account Settings --
+
+  # Set the folder inside the folder-hook.  It won't cause a loop, and it will
+  # cause '=' to represent the current folder.  (I would expect a loop as
+  # setting the folder would trigger the folder-hook again.  I would also
+  # expect '=' to be set when the change-folder action occurs.)
 
   # aabugher:
   folder-hook 'aabugher'                        "set from       = $from_aabugher"
@@ -35,7 +31,6 @@
   folder-hook 'aabugher'                        "set imap_pass  = $pass_aabugher"
   folder-hook 'aabugher'                        "set smtp_pass  = $pass_aabugher"
   folder-hook 'aabugher'                        "set smtp_url   = $smtp_url_aabugher"
-  # mailboxes $folder_aabugher
 
   # spidermonkeyblues:
   folder-hook 'spidermonkeyblues'               "set from       = $from_smb"
@@ -45,7 +40,6 @@
   folder-hook 'spidermonkeyblues'               "set imap_pass  = $pass_smb"
   folder-hook 'spidermonkeyblues'               "set smtp_pass  = $pass_smb"
   folder-hook 'spidermonkeyblues'               "set smtp_url   = $smtp_url_smb"
-  # mailboxes $folder_smb
 
   # aabugher.banking:
   folder-hook 'aabugher.banking'                "set from       = $from_banking"
@@ -55,7 +49,6 @@
   folder-hook 'aabugher.banking'                "set imap_pass  = $pass_banking"
   folder-hook 'aabugher.banking'                "set smtp_pass  = $pass_banking"
   folder-hook 'aabugher.banking'                "set smtp_url   = $smtp_url_banking"
-  # mailboxes $folder_banking
 
   # aaronsandroidmarketaccount:
   folder-hook 'aaronsandroidmarketaccount'      "set from       = $from_market"
@@ -65,27 +58,40 @@
   folder-hook 'aaronsandroidmarketaccount'      "set imap_pass  = $pass_market"
   folder-hook 'aaronsandroidmarketaccount'      "set smtp_pass  = $pass_market"
   folder-hook 'aaronsandroidmarketaccount'      "set smtp_url   = $smtp_url_market"
-  # mailboxes $folder_market
 
 # -- /Per Account Settings --
 
 
-# -- Account Switching Shortcuts --
+# -- Account Switching --
 
   # Make it easy to switch between accounts (<esc> 1, <esc> 2).
-
   macro index \e1 <change-folder>$folder_escaped_aabugher<enter>
   macro index \e2 <change-folder>$folder_escaped_smb<enter>
   macro index \e3 <change-folder>$folder_escaped_banking<enter>
   macro index \e4 <change-folder>$folder_escaped_market<enter>
 
-# -- /Account Switching Shortcuts --
+  # Register and label these mailboxes...
+  mailboxes -label 'aabugher'   "$folder_aabugher"
+  mailboxes -label 'smb'        "$folder_smb"
+  mailboxes -label 'banking'    "$folder_banking"
+  mailboxes -label 'market'     "$folder_market"
+
+# -- /Account Switching --
+
+
+# -- Global Settings --
+
+  set realname          = "Aaron Bugher"
+  # Set a from address header in which to use the real name.
+  set use_from          = "yes"
+
+# -- /Global Settings --
 
 
 # -- Initial Account Selection --
 
   # This must happen after the folder-hook for this account is defined, or
   # nothing works.
-  set folder    = $folder_aabugher
+  set folder            = $folder_aabugher
 
 # -- /Initial Account Selection --
