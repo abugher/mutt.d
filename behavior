@@ -42,3 +42,4 @@ bind pager <up> previous-line
 
 set header_cache = "~/.muttheaders"
 exec last-entry
+set sleep_time          = 0
