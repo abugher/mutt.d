@@ -7,7 +7,21 @@
 function main() {
   mutt="${MUTT:-$(find_mutt)}"
   mutt_name="$(find_mutt_name)"
+  export index_format="$(set_index_format)"
   "${mutt}" "${@}"
+}
+
+
+function set_index_format() {
+  # Yo dawg, I heard you like format strings.
+  case "${mutt_name}" in
+    'termux')
+      printf '%s' ' %Z  %-7C %D    %-20.20s    %-20.20F    %a'
+      ;;
+    *)
+      printf '%s' ' %Z  %-7C %D    %-60.60s    %-20.20F    %a'
+      ;;
+  esac
 }
 
 

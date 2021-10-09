@@ -13,7 +13,7 @@ auto_view text/html text/calendar
 
 #
 set date_format         = "%a %Y-%m-%d %R"
-set index_format        = " %Z  %-7C %D    %-60.60s    %-20.20F    %a"
+set index_format        = "$index_format"
 
 # Minimum interval between progress updates, in milliseconds:
 set time_inc = 500
