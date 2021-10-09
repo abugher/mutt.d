@@ -1,0 +1,6 @@
+set sidebar_width     = 20
+set sidebar_visible   = 'yes'
+
+macro index   <down>          <sidebar-next>
+macro index   <up>            <sidebar-prev>
+macro index   <right>         <sidebar-open>
