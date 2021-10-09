@@ -33,9 +33,9 @@ function find_mutt() {
 
   # Discover available mutts.
   unknown_mutts=()
+  true_self="$(readlink -f "${0}")"
   while read unknown_mutt; do
     # Try not to unintentionally recurse.
-    true_self="$(readlink -f "${0}")"
     true_unknown_mutt="$(readlink -f "${unknown_mutt}")"
     if test "${true_self}" = "${true_unknown_mutt}"; then
       continue
@@ -127,4 +127,4 @@ known_mutts=(
 )
 
 
-main
+main "${@}"
