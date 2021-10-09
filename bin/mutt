@@ -3,6 +3,61 @@
 # Does this script handle passwords as variables in a way that leaks them into
 # the process table?
 
+
+function main() {
+  mutt="${MUTT:-$(find_mutt)}"
+  mutt_name="$(find_mutt_name)"
+  "${mutt}" "${@}"
+}
+
+
+function find_mutt_name() {
+  for known_mutt_name in "${!known_mutts[@]}"; do
+    known_mutt="${known_mutts[${known_mutt_name}]}"
+    if test "${mutt}" = "${known_mutt}"; then
+      printf "%s" "${known_mutt_name}"
+      return 0
+    fi
+  done
+}
+
+
+function find_mutt() {
+  # Prefer a known mutt.
+  for known_mutt in "${known_mutts[@]}"; do
+    if test -e "${known_mutt}"; then
+      printf "%s" "${known_mutt}"
+      return 0
+    fi
+  done
+
+  # Discover available mutts.
+  unknown_mutts=()
+  while read unknown_mutt; do
+    # Try not to unintentionally recurse.
+    true_self="$(readlink -f "${0}")"
+    true_unknown_mutt="$(readlink -f "${unknown_mutt}")"
+    if test "${true_self}" = "${true_unknown_mutt}"; then
+      continue
+    fi
+    unknown_mutts+=( "${unknown_mutt}" )
+  done < <( type -ap mutt; locate mutt )
+
+  if test 0 -eq "${#unknown_mutts}"; then
+    fail "Can't find the real mutt."
+  fi
+
+  # Well, good luck.
+  printf "%s" "${unknown_mutts[0]}"
+}
+
+
+function fail() {
+  printf "ERROR:  %s\n" "${1}" >&2
+  exit 1
+}
+
+
 export pass_aabugher="$(pass show aaron/gmail/aabugher/app_password_mawg)"
 export pass_smb="$(pass show aaron/gmail/spidermonkeyblues/app_password_mawg)"
 export pass_banking="$(pass show aaron/gmail/aabugher.banking/app_password_mawg)"
@@ -65,4 +120,11 @@ export from_smb="spidermonkeyblues${from_part_2}"
 export from_banking="aabugher.banking${from_part_2}"
 export from_market="aaronsandroidmarketaccount${from_part_2}"
 
-/usr/bin/mutt "${@}"
+declare -A known_mutts
+known_mutts=(
+  [standard]='/usr/bin/mutt'
+  [termux]='/data/data/com.termux/files/usr/bin/mutt'
+)
+
+
+main
