@@ -1,3 +1,4 @@
+source "~/.mutt.d/accounts"
 source "~/.mutt.d/identity"
 source "~/.mutt.d/display"
 source "~/.mutt.d/colors"
