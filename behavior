@@ -42,13 +42,3 @@ bind pager <up> previous-line
 
 set header_cache = "~/.muttheaders"
 exec last-entry
-
-# These might be account-specific:
-set use_from            = "yes"
-#set mail_check          = 15
-#set timeout             = 15
-set imap_idle           = "yes"
-
-set record              = "="
-set postponed           = "=Drafts"
-set spoolfile           = "="
