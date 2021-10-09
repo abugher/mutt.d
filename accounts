@@ -1,4 +1,4 @@
-# Make it easy to switch between accounts (<esc> 1, <esc> 2).
+# Make it easy to switch among accounts (<esc> 1, <esc> 2, ...).
 macro index \e1 <change-folder>$folder_escaped_aabugher<enter>
 macro index \e2 <change-folder>$folder_escaped_smb<enter>
 macro index \e3 <change-folder>$folder_escaped_banking<enter>
@@ -49,9 +49,3 @@ folder-hook 'aaronsandroidmarketaccount'      "set postponed  = $postponed_marke
 folder-hook 'aaronsandroidmarketaccount'      "set imap_pass  = $pass_market"
 folder-hook 'aaronsandroidmarketaccount'      "set smtp_pass  = $pass_market"
 folder-hook 'aaronsandroidmarketaccount'      "set smtp_url   = $smtp_url_market"
-
-
-# Select an account to load at start.
-# 
-# Do this after the folder-hook is defined, or nothing works.
-set folder            = $folder_aabugher

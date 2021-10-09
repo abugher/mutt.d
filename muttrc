@@ -5,3 +5,5 @@ source "~/.mutt.d/colors"
 source "~/.mutt.d/behavior"
 source "~/.mutt.d/aliases"
 source "~/.mutt.d/source_macros"
+# Load defaults after accounts - preferably last.
+source "~/.mutt.d/defaults"
