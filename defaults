@@ -1,2 +1,0 @@
-# Do this after the folder-hooks are defined, or nothing works.
-set folder              = "$folder_aabugher"

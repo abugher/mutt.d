@@ -1,0 +1,15 @@
+# startup
+#
+# This file is for configuration lines that will initiate action when they are
+# parsed.  This file should be included last, so that any actions initiated
+# have the benefit of the rest of the configuration details.
+
+# Open the default mailbox.  Do this after the folder-hooks are defined, or
+# nothing works.
+#
+# IMAP connection doesn't start until after both of these lines.  The
+# folder-hook seems to kick in at that time - either statement can be placed
+# before the folder-hook declarations and the other statement after, and the
+# folder-hooks work.  (Let's just keep them together, though.)
+set folder              = "$folder_aabugher"
+set spoolfile           = '='
