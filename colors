@@ -61,6 +61,7 @@ color index magenta default "~U ~f '\^online\.communications@alerts\.comcast\.ne
 color index magenta default "~U ~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Thank you for your recent payment\$'"
 color index magenta default "~U ~f '\^support@eaze\.com\$' ~s '\^Your order was delivered,'"
 color index magenta default "~U ~f '@23andme\.com\$'"
+color index magenta default "~U ~f '@mail\.23andme\.com\$'"
 color index magenta default "~U ~f '\^info@comms\.yahoo\.net\$'"
 color index magenta default "~U ~f '\^no-reply@amazon\.com\$' ~s '\^Thank you for reviewing'"
 color index magenta default "~U ~f '\^kp-donotreply-np@kp\.org\$' ! ~s 'your'"

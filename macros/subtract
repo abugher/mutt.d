@@ -8,6 +8,7 @@ macro index - "\
 <tag-pattern>~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Thank you for your recent payment\$'<enter>\
 <tag-pattern>~f '\^support@eaze\.com\$' ~s '\^Your order was delivered,'<enter>\
 <tag-pattern>~f '@23andme\.com\$'<enter>\
+<tag-pattern>~f '@mail\.23andme\.com\$'<enter>\
 <tag-pattern>~f '\^info@comms\.yahoo\.net\$'<enter>\
 <tag-pattern>~f '\^no-reply@amazon\.com\$' ~s '\^Thank you for reviewing'<enter>\
 <tag-pattern>~f '\^kp-donotreply-np@kp\.org\$' ! ~s 'your'<enter>\
