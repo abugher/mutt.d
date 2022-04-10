@@ -4,6 +4,8 @@
 
 macro index - "\
 <tag-pattern>~f '\^auto-confirm@amazon\.com\$'<enter>\
+<tag-pattern>~f '\^order-update@amazon\.com\$'<enter>\
+<tag-pattern>~f '\^shipment-tracking@amazon\.com\$'<enter>\
 <tag-pattern>~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Your bill is ready to view\$'<enter>\
 <tag-pattern>~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Thank you for your recent payment\$'<enter>\
 <tag-pattern>~f '\^support@eaze\.com\$' ~s '\^Your order was delivered,'<enter>\
