@@ -18,6 +18,7 @@ macro index - "\
 <tag-pattern>~f '\^billing@linode\.com\$' ~s '\^Linode - Invoice'<enter>\
 <tag-pattern>~f '\^billing@linode\.com\$' ~s '\^Linode.com: Payment Receipt'<enter>\
 <tag-pattern>~f '\^notice@info\.aliexpress\.com\$'<enter>\
+<tag-pattern>~f '\^donotreply@rxorder\.walgreens\.com\$'<enter>\
 \
 <untag-pattern>~f '\^rlbugher@gmail\.com\$'<enter>\
 \
