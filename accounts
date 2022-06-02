@@ -3,6 +3,7 @@ macro index \e1 <change-folder>$folder_escaped_aabugher<enter>
 macro index \e2 <change-folder>$folder_escaped_smb<enter>
 macro index \e3 <change-folder>$folder_escaped_banking<enter>
 macro index \e4 <change-folder>$folder_escaped_market<enter>
+macro index \e4 <change-folder>$folder_escaped_rachel<enter>
 
 
 # Register and label these mailboxes.
@@ -10,6 +11,7 @@ mailboxes -label 'aabugher'   "$folder_aabugher"
 mailboxes -label 'smb'        "$folder_smb"
 mailboxes -label 'banking'    "$folder_banking"
 mailboxes -label 'market'     "$folder_market"
+mailboxes -label 'rachel'     "$folder_rachel"
 
 
 # Define each account.
@@ -49,3 +51,12 @@ folder-hook 'aaronsandroidmarketaccount'      "set postponed  = $postponed_marke
 folder-hook 'aaronsandroidmarketaccount'      "set imap_pass  = $pass_market"
 folder-hook 'aaronsandroidmarketaccount'      "set smtp_pass  = $pass_market"
 folder-hook 'aaronsandroidmarketaccount'      "set smtp_url   = $smtp_url_market"
+
+# rlbugher:
+folder-hook 'rlbugher'      "set from       = $from_rachel"
+folder-hook 'rlbugher'      "set folder     = $folder_escaped_rachel"
+folder-hook 'rlbugher'      "set record     = $record_escaped_rachel"
+folder-hook 'rlbugher'      "set postponed  = $postponed_rachel"
+folder-hook 'rlbugher'      "set imap_pass  = $pass_rachel"
+folder-hook 'rlbugher'      "set smtp_pass  = $pass_rachel"
+folder-hook 'rlbugher'      "set smtp_url   = $smtp_url_rachel"
