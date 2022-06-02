@@ -77,8 +77,10 @@ export pass_smb="$(pass show aaron/gmail/spidermonkeyblues/app_password_mawg)"
 export pass_banking="$(pass show aaron/gmail/aabugher.banking/app_password_mawg)"
 export pass_market="$(pass show aaron/gmail/aaronsandroidmarketaccount/app_password_mawg)"
 
-export folder_part_2='@imap.gmail.com/[Gmail]/All Mail'
-export folder_part_2_escaped='@imap.gmail.com/[Gmail]/All%20Mail'
+#export folder_part_2='@imap.gmail.com/[Gmail]/All Mail'
+#export folder_part_2_escaped='@imap.gmail.com/[Gmail]/All%20Mail'
+export folder_part_2='@imap.gmail.com/INBOX'
+export folder_part_2_escaped='@imap.gmail.com/INBOX'
 
 export folder_part_0='imaps://'
 
@@ -100,6 +102,8 @@ export folder_escaped_market="${folder_part_1_market}${folder_part_2_escaped}"
 export record_part_0="${folder_part_0}"
 export record_part_2='@imap.gmail.com/[Gmail]/Sent Mail'
 export record_part_2_escaped='@imap.gmail.com/[Gmail]/Sent\ Mail'
+#export record_part_2='@imap.gmail.com/Sent'
+#export record_part_2_escaped='@imap.gmail.com/Sent'
 
 export record_aabugher="${record_part_0}aabugher${record_part_2}"
 export record_smb="${record_part_0}spidermonkeyblues${record_part_2}"
