@@ -20,6 +20,8 @@ macro index - "\
 <tag-pattern>~f '\^notice@info\.aliexpress\.com\$'<enter>\
 <tag-pattern>~f '\^donotreply@rxorder\.walgreens\.com\$'<enter>\
 <tag-pattern>~f '\^support@99pledges\.com\$'<enter>\
+<tag-pattern>~f '\^payments-noreply@google\.com\$' ~s '\^Your Google Fiber monthly statement\$'<enter>\
+<tag-pattern>~f '\^payments-noreply@google\.com\$' ~s '\^Google Fiber: Payment received\$'<enter>\
 \
 <untag-pattern>~f '\^rlbugher@gmail\.com\$'<enter>\
 \

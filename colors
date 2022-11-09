@@ -71,6 +71,8 @@ color index magenta default "~U ~f '\^billing@linode\.com\$' ~s '\^Linode - Invo
 color index magenta default "~U ~f '\^billing@linode\.com\$' ~s '\^Linode.com: Payment Receipt'"
 color index magenta default "~U ~f '\^notice@info\.aliexpress\.com\$'"
 color index magenta default "~U ~f '\^support@99pledges\.com\$'"
+color index magenta default "~U ~f '\^payments-noreply@google\.com\$' ~s '\^Your Google Fiber monthly statement\$'"
+color index magenta default "~U ~f '\^payments-noreply@google\.com\$' ~s '\^Google Fiber: Payment received\$'"
 color index magenta default "~U ~f '\^donotreply@rxorder\.walgreens\.com\$'"
 
 # Bright red for unusually important topics:
