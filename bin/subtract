@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # "Subtract" the noise with the minus key.
 #
 # The filter files are named for a color and pass number.  See bin/filters for
