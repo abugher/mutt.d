@@ -1,0 +1,9 @@
+source "~/.mutt.d/static/accounts"
+source "~/.mutt.d/static/identity"
+source "~/.mutt.d/static/display"
+source "~/.mutt.d/static/colors"
+source "~/.mutt.d/bin/filters|"
+source "~/.mutt.d/static/behavior"
+source "~/.mutt.d/static/aliases"
+source "~/.mutt.d/static/source_macros"
+source "~/.mutt.d/static/startup
