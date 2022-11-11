@@ -1,94 +1,17 @@
-# Color key:
-#
-#   magenta:    delete - targeted by "subtract" macro
-#   cyan:       read subject
-#   green:      skim content
-#   red         read content
-#
-# File layout (last match wins):
-#
-#   colorless:  Attributes for colorless display.
-#
-#   cyan 1:     Color all messages.  (Unless they meet other conditions.)
-#   green 1:    Color messages to lists.  (Unless they are to me.)
-#   magenta 1:  Color messages targeted for deletion.  (Unless they are to me.)
-#
-#   red 1:      Color messages directly to me.
-#
-#   cyan 2:     Color messages as not being direct communication.  (Even if they are to me.)
-#   green 2:    Color messages from lists as not being directly to me.  (Even if they are to me.)
-#   magenta 2:  Color messages targeted for deletion.  (Even if they are to me.)
+# Static coloring rules.  For coloring based on message filtering, see
+# bin/filters.
 
-# Update macros/subtract when you update this file.
-
-# colorless:
-mono header standout ^(From|Subject|Date):
+mono header standout '^(From|Subject|Date):'
 mono quoted bold
 
-# cyan 1:
-color index cyan default ~U
+color index cyan default '~U'
 
-# green 1:
-color index green default '~U ~c aabugher@gmail\.com'
-color index green default '~U ~c spidermonkeyblues@gmail\.com'
-color index green default '~U ~c aabugher\.banking@gmail\.com'
-
-# magenta 1:
-#color index magenta default "~U ~f '\^user@domain\.tld\$'"
-
-# red 1:
-color index red default '~U ~t aabugher@gmail\.com'
-color index red default '~U ~t spidermonkeyblues@gmail\.com'
-color index red default '~U ~t aabugher\.banking@gmail\.com'
-
-# cyan 2:
-color index cyan default "~U ~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Reminder that your automatic payment will process soon\$'"
-color index cyan default "~U ~f '\^spa@alerts\.comcast\.net\$' ~s '\^Notification of Claimed Copyright Infringement'"
-color index cyan default "~U ~f '\^no-reply@youtube\.com\$'"
-color index cyan default "~U ~f '\^nagios@neuron-mail\.neuronpointer\.net\$'"
-color index cyan default "~U ~f '\^donotreply@rxorder\.walgreens\.com\$'"
-
-# green 2:
-color index green default "~U ~f '\^no-reply@rentcafe\.com\$'"
-color index green default "~U ~f '\^spa@alerts\.comcast\.net\$' ~s '\^XFINITY Internet DMCA Policy Repeat Infringer Alert'"
-color index green default "~U ~f '\^venmo@venmo\.com\$'"
-color index green default "~U ~f '\^email@cgpgrey\.com\$'"
-
-# magenta 2:
-color index magenta default "~U ~f '\^auto-confirm@amazon\.com\$'"
-color index magenta default "~U ~f '\^order-update@amazon\.com\$'"
-color index magenta default "~U ~f '\^shipment-tracking@amazon\.com\$'"
-color index magenta default "~U ~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Your bill is ready to view\$'"
-color index magenta default "~U ~f '\^online\.communications@alerts\.comcast\.net\$' ~s '\^Thank you for your recent payment\$'"
-color index magenta default "~U ~f '\^support@eaze\.com\$' ~s '\^Your order was delivered,'"
-color index magenta default "~U ~f '@23andme\.com\$'"
-color index magenta default "~U ~f '@mail\.23andme\.com\$'"
-color index magenta default "~U ~f '\^info@comms\.yahoo\.net\$'"
-color index magenta default "~U ~f '\^no-reply@amazon\.com\$' ~s '\^Thank you for reviewing'"
-color index magenta default "~U ~f '\^kp-donotreply-np@kp\.org\$' ! ~s 'your'"
-color index magenta default "~U ~f '\^memberservices@smcu\.org\$' ~s '\^Your monthly eStatement is now available\$'"
-color index magenta default "~U ~f '\^billing@linode\.com\$' ~s '\^Linode - Invoice'"
-color index magenta default "~U ~f '\^billing@linode\.com\$' ~s '\^Linode.com: Payment Receipt'"
-color index magenta default "~U ~f '\^notice@info\.aliexpress\.com\$'"
-color index magenta default "~U ~f '\^support@99pledges\.com\$'"
-color index magenta default "~U ~f '\^payments-noreply@google\.com\$' ~s '\^Your Google Fiber monthly statement\$'"
-color index magenta default "~U ~f '\^payments-noreply@google\.com\$' ~s '\^Google Fiber: Payment received\$'"
-color index magenta default "~U ~f '\^donotreply@rxorder\.walgreens\.com\$'"
-
-# Bright red for unusually important topics:
-#color index brightred default '~U ~s "money"'
-#color index brightred default '~U ~s "power"'
-#color index brightred default '~U ~s "sex"'
-
-
-# Other color settings:
 color normal white default
 color hdrdefault cyan default
 color quoted green default
 color signature brightyellow default
 color indicator brightyellow red
 color error brightred black
-# color status yellow blue
 color status brightgreen blue
 color tree magenta default
 color tilde magenta default
@@ -100,10 +23,4 @@ color search black green
 color header cyan default ^(To|Cc|Message-ID):
 color header brightgreen default ^Subject:
 color header green default ^(From|Date):
-# color body magenta black "(ftp|htp)://[^ ]+"		# URL
-# color body magenta black "www\.[-a-z_0-9.]+\.com"	# bad URL
-# color body magenta black [-a-z_0-9.]+@[-a-z_0-9.]+	# email address
 color underline brightgreen default
-
-# As there are many color entries, please put any new additions to this file
-# upward, north of the color entries, for easier browsing.

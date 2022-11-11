@@ -1,0 +1,62 @@
+# "Subtract" the noise with the minus key.
+#
+# The filter files are named for a color and pass number.  See bin/filters for
+# details.
+
+
+# Open the macro.
+cat << 'EOF'
+macro index - "\
+EOF
+
+
+# This looks like spam unless it is specifically for me.
+file=~/.mutt.d/filters/magenta.1
+if test -e "${file}"; then
+  while read -r filter; do
+    printf '<tag-pattern>%s<enter>\\\n' "${filter}"
+  done < <(grep -vE '^#|^$' "${file}")
+fi
+
+printf '\\\n'
+
+# This is specifically for me.
+file=~/.mutt.d/filters/red.1
+if test -e "${file}"; then
+  while read -r filter; do
+    printf '<untag-pattern>%s<enter>\\\n' "${filter}"
+  done < <(grep -vE '^#|^$' "${file}")
+fi
+
+printf '\\\n'
+
+# This looks like spam even if it is specifically for me.
+file=~/.mutt.d/filters/magenta.2
+if test -e "${file}"; then
+  while read -r filter; do
+    printf '<tag-pattern>%s<enter>\\\n' "${filter}"
+  done < <(grep -vE '^#|^$' "${file}")
+fi
+
+printf '\\\n'
+
+# This looks important.  Nevermind whether it looks like spam.
+file=~/.mutt.d/filters/red.2
+if test -e "${file}"; then
+  while read -r filter; do
+    printf '<untag-pattern>%s<enter>\\\n' "${filter}"
+  done < <(grep -vE '^#|^$' "${file}")
+fi
+
+
+# Finish and close the macro.
+cat << 'EOF'
+\
+<tag-prefix-cond>\
+<clear-flag>N\
+<clear-flag>U\
+<save-message>=Trash<enter>\
+<sync-mailbox><enter>\
+<end-cond>\
+"
+EOF
