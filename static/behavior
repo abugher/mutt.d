@@ -41,6 +41,8 @@ bind pager <down> next-line
 bind pager <up> previous-line
 
 set header_cache = "~/.muttheaders"
+set message_cachedir = "~/.muttheaders"
+
 exec last-entry
 # How long to display messages.  Also delays opening any mailbox by this long.
 set sleep_time          = 1
