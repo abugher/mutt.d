@@ -40,6 +40,9 @@ bind pager G bottom
 bind pager <down> next-line
 bind pager <up> previous-line
 
+# Use one directory for header and message cache.  Create this directory before
+# running mutt, or mutt will create a database file instead, even if
+# message_cachedir is specified first, and messages will not be cached.
 set message_cachedir = "~/.mutt_cache"
 set header_cache = "~/.mutt_cache"
 
