@@ -40,8 +40,8 @@ bind pager G bottom
 bind pager <down> next-line
 bind pager <up> previous-line
 
-set header_cache = "~/.muttheaders"
-set message_cachedir = "~/.muttheaders"
+set message_cachedir = "~/.mutt_cache"
+set header_cache = "~/.mutt_cache"
 
 exec last-entry
 # How long to display messages.  Also delays opening any mailbox by this long.
