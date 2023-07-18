@@ -4,12 +4,10 @@
 #
 # The filter files are named for a color and pass number.  See bin/filters for
 # details.
-
-
-# Open the macro.
-cat << 'EOF'
-macro index - "\
-EOF
+#
+# The output of this script should be usable as the inner content of a macro to
+# define an action for the minus key and also as a configuration to be sourced
+# by hooks in order to automatically subtract spam at every server interaction.
 
 
 # This looks like spam unless it is specifically for me.
@@ -60,5 +58,4 @@ cat << 'EOF'
 <save-message>=Trash<enter>\
 <sync-mailbox><enter>\
 <end-cond>\
-"
 EOF

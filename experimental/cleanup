@@ -4,7 +4,4 @@
 # testing.  If this works, I won't need to whack the minus key to get rid of
 # these messages.
 
-account-hook '^imap' "exec \
-<tag-pattern>~f '\^user@domain\\.tld\$'<enter>\
-<tag-prefix-cond><save-message>=Spam<enter><sync-mailbox><enter><end-cond>\
-"
+account-hook '^imap' 'source "~/.mutt.d/bin/define_subtract|"'

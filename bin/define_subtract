@@ -1,0 +1,10 @@
+# Open the macro.
+cat << 'EOF'
+macro index - "\
+EOF
+
+. ~/.mutt.d/bin/subtract
+
+cat << 'EOF'
+"
+EOF
