@@ -1,9 +1,10 @@
-# Open the macro.
+#!/bin/bash
+
 cat << 'EOF'
 macro index - "\
 EOF
 
-. ~/.mutt.d/bin/subtract
+source "${HOME}/.mutt.d/bin/subtract"
 
 cat << 'EOF'
 "

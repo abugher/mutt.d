@@ -6,4 +6,4 @@ source "~/.mutt.d/bin/filters|"
 source "~/.mutt.d/static/behavior"
 source "~/.mutt.d/bin/aliases|"
 source "~/.mutt.d/static/source_macros"
-source "~/.mutt.d/static/startup
+source "~/.mutt.d/static/startup"
