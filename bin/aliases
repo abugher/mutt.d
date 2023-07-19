@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if test -e "~/.mutt.d/static/aliases"; then
+  echo 'source "~/.mutt.d/static/aliases"'
+fi
