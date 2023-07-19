@@ -31,13 +31,13 @@ folder-hook 'aabugher'                          "set smtp_pass  = $pass_aabugher
 folder-hook 'aabugher'                          "set smtp_url   = $smtp_url_aabugher"
 
 # spidermonkeyblues:
-folder-hook 'spidermonkeyblues'                 "set from       = $from_smb"
-folder-hook 'spidermonkeyblues'                 "set folder     = $folder_escaped_smb"
-folder-hook 'spidermonkeyblues'                 "set record     = $record_escaped_smb,$folder_escaped_smb"
-folder-hook 'spidermonkeyblues'                 "set postponed  = $postponed_smb"
-folder-hook 'spidermonkeyblues'                 "set imap_pass  = $pass_smb"
-folder-hook 'spidermonkeyblues'                 "set smtp_pass  = $pass_smb"
-folder-hook 'spidermonkeyblues'                 "set smtp_url   = $smtp_url_smb"
+folder-hook "$folder_smb"                       "set from       = $from_smb"
+folder-hook "$folder_smb"                       "set folder     = $folder_escaped_smb"
+folder-hook "$folder_smb"                       "set record     = $record_escaped_smb,$folder_escaped_smb"
+folder-hook "$folder_smb"                       "set postponed  = $postponed_smb"
+folder-hook "$folder_smb"                       "set imap_pass  = $pass_smb"
+folder-hook "$folder_smb"                       "set smtp_pass  = $pass_smb"
+folder-hook "$folder_smb"                       "set smtp_url   = $smtp_url_smb"
 
 # aabugher.banking:
 folder-hook 'aabugher.banking'                  "set from       = $from_banking"
