@@ -22,13 +22,13 @@ mailboxes -label 'rachel'     "$folder_rachel"
 #   The 'folder' variable is not set by opening a folder, so set it here.
 
 # aabugher:
-folder-hook 'aabugher'                          "set from       = $from_aabugher"
-folder-hook 'aabugher'                          "set folder     = $folder_escaped_aabugher"
-folder-hook 'aabugher'                          "set record     = $record_escaped_aabugher,$folder_escaped_aabugher"
-folder-hook 'aabugher'                          "set postponed  = $postponed_aabugher"
-folder-hook 'aabugher'                          "set imap_pass  = $pass_aabugher"
-folder-hook 'aabugher'                          "set smtp_pass  = $pass_aabugher"
-folder-hook 'aabugher'                          "set smtp_url   = $smtp_url_aabugher"
+folder-hook "$folder_aabugher"                  "set from       = $from_aabugher"
+folder-hook "$folder_aabugher"                  "set folder     = $folder_escaped_aabugher"
+folder-hook "$folder_aabugher"                  "set record     = $record_escaped_aabugher,$folder_escaped_aabugher"
+folder-hook "$folder_aabugher"                  "set postponed  = $postponed_aabugher"
+folder-hook "$folder_aabugher"                  "set imap_pass  = $pass_aabugher"
+folder-hook "$folder_aabugher"                  "set smtp_pass  = $pass_aabugher"
+folder-hook "$folder_aabugher"                  "set smtp_url   = $smtp_url_aabugher"
 
 # spidermonkeyblues:
 folder-hook "$folder_smb"                       "set from       = $from_smb"
