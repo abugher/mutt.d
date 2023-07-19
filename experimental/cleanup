@@ -1,7 +1,0 @@
-# Set an account hook so that whenever mutt interacts with the imap server, it
-# carries out the "subtract" macro.  Ultimately, I'll only want to maintain one
-# or the other of these, so I'm just going to duplicate the whole wad here for
-# testing.  If this works, I won't need to whack the minus key to get rid of
-# these messages.
-
-account-hook '^imap' 'source "~/.mutt.d/bin/define_subtract|"'

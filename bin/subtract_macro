@@ -9,3 +9,4 @@ source "${HOME}/.mutt.d/bin/subtract"
 cat << 'EOF'
 "
 EOF
+
