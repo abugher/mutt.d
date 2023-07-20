@@ -1,3 +1,14 @@
+# Usage
+
+* Install and configure `pass`.
+* Clone this repo to `~/.mutt.d`.
+* Make `~/.muttrc` a symlink pointing to `static/muttrc`.
+* Copy the lines from `system/mailcap` to `~/.mailcap`.
+* Check `system/mailcap` for other programs to install.
+* Check and/or edit `bin/mutt` for expected paths to passwords.
+* Edit `static/accounts` to reflect your own account(s).
+* Run the wrapper at `bin/mutt`.
+
 # Contents
 
 ## static
