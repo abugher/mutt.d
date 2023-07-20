@@ -1,3 +1,0 @@
-source "~/.mutt.d/bin/subtract_macro|"
-source "~/.mutt.d/macros/sort_normal"
-source "~/.mutt.d/macros/clear_unread_and_new_flags"
