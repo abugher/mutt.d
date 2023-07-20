@@ -1,0 +1,1 @@
+~f '\^some\.account@some\.company\.net\$' ~s '\^This is the annoying subject line in full\.\$'
