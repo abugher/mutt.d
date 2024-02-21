@@ -76,6 +76,7 @@ export pass_aabugher="$(pass show aaron/gmail/aabugher/app_password_mawg)"
 export pass_smb="$(pass show aaron/gmail/spidermonkeyblues/app_password_mawg)"
 export pass_banking="$(pass show aaron/gmail/aabugher.banking/app_password_mawg)"
 export pass_market="$(pass show aaron/gmail/aaronsandroidmarketaccount/app_password_mawg)"
+export pass_aaron="$(pass show aaron/neuronpointer.net/aaron)"
 
 #export folder_part_2='@imap.gmail.com/[Gmail]/All Mail'
 #export folder_part_2_escaped='@imap.gmail.com/[Gmail]/All%20Mail'
@@ -88,16 +89,19 @@ export folder_part_1_aabugher="${folder_part_0}aabugher"
 export folder_part_1_smb="${folder_part_0}spidermonkeyblues"
 export folder_part_1_banking="${folder_part_0}aabugher.banking"
 export folder_part_1_market="${folder_part_0}aaronsandroidmarketaccount"
+export folder_part_1_aaron="${folder_part_0}aaron"
 
 export folder_aabugher="${folder_part_1_aabugher}${folder_part_2}"
 export folder_smb="${folder_part_1_smb}${folder_part_2}"
 export folder_banking="${folder_part_1_banking}${folder_part_2}"
 export folder_market="${folder_part_1_market}${folder_part_2}"
+export folder_aaron="${folder_part_1_aaron}@neuron-mail.neuronpointer.net/INBOX"
 
 export folder_escaped_aabugher="${folder_part_1_aabugher}${folder_part_2_escaped}"
 export folder_escaped_smb="${folder_part_1_smb}${folder_part_2_escaped}"
 export folder_escaped_banking="${folder_part_1_banking}${folder_part_2_escaped}"
 export folder_escaped_market="${folder_part_1_market}${folder_part_2_escaped}"
+export folder_escaped_aaron="${folder_part_1_aaron}@neuron-mail.neuronpointer.net/INBOX"
 
 export record_part_0="${folder_part_0}"
 export record_part_2='@imap.gmail.com/[Gmail]/Sent Mail'
@@ -109,11 +113,13 @@ export record_aabugher="${record_part_0}aabugher${record_part_2}"
 export record_smb="${record_part_0}spidermonkeyblues${record_part_2}"
 export record_banking="${record_part_0}aabugher.banking${record_part_2}"
 export record_market="${record_part_0}aaronsandroidmarketaccount${record_part_2}"
+export record_aaron="${record_part_0}aaron@neuron-mail.neuronpointer.net/Sent"
 
 export record_escaped_aabugher="${record_part_0}aabugher${record_part_2_escaped}"
 export record_escaped_smb="${record_part_0}spidermonkeyblues${record_part_2_escaped}"
 export record_escaped_banking="${record_part_0}aabugher.banking${record_part_2_escaped}"
 export record_escaped_market="${record_part_0}aaronsandroidmarketaccount${record_part_2_escaped}"
+export record_escaped_aaron="${record_part_0}aaron@neuron-mail.neuronpointer.net/Sent"
 
 export postponed_part_0="${folder_part_0}"
 export postponed_part_2='@imap.gmail.com/[Gmail]/Drafts'
@@ -122,6 +128,7 @@ export postponed_aabugher="${postponed_part_0}aabugher${postponed_part_2}"
 export postponed_smb="${postponed_part_0}spidermonkeyblues${postponed_part_2}"
 export postponed_banking="${postponed_part_0}aabugher.banking${postponed_part_2}"
 export postponed_market="${postponed_part_0}aaronsandroidmarketaccount${postponed_part_2}"
+export postponed_aaron="${postponed_part_0}aaron@neuron-mail.neuronpointer.net/Drafts"
 
 export smtp_url_part_0='smtps://'
 export smtp_url_part_2='@smtp.gmail.com'
@@ -130,6 +137,7 @@ export smtp_url_aabugher="${smtp_url_part_0}aabugher${smtp_url_part_2}"
 export smtp_url_smb="${smtp_url_part_0}spidermonkeyblues${smtp_url_part_2}"
 export smtp_url_banking="${smtp_url_part_0}aabugher.banking${smtp_url_part_2}"
 export smtp_url_market="${smtp_url_part_0}aaronsandroidmarketaccount${smtp_url_part_2}"
+export smtp_url_aaron="${smtp_url_part_0}aaron@neuron-mail.neuronpointer.net"
 
 export from_part_2='@gmail.com'
 
@@ -137,6 +145,7 @@ export from_aabugher="aabugher${from_part_2}"
 export from_smb="spidermonkeyblues${from_part_2}"
 export from_banking="aabugher.banking${from_part_2}"
 export from_market="aaronsandroidmarketaccount${from_part_2}"
+export from_aaron="aaron@neuronpointer.net"
 
 declare -A known_mutts
 known_mutts=(
