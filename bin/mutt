@@ -145,7 +145,7 @@ export from_aabugher="aabugher${from_part_2}"
 export from_smb="spidermonkeyblues${from_part_2}"
 export from_banking="aabugher.banking${from_part_2}"
 export from_market="aaronsandroidmarketaccount${from_part_2}"
-export from_aaron="aaron@neuronpointer.net"
+export from_aaron="aaron@bugher.net"
 
 declare -A known_mutts
 known_mutts=(
