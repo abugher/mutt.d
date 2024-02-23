@@ -3,11 +3,11 @@ set fcc_delimiter = ','
 
 # Make it easy to switch among accounts (<esc> 1, <esc> 2, ...).
 macro index \e1 <change-folder>$folder_escaped_aaron<enter>
-macro index \e2 <change-folder>$folder_escaped_smb<enter>
-macro index \e3 <change-folder>$folder_escaped_banking<enter>
-macro index \e4 <change-folder>$folder_escaped_market<enter>
-macro index \e5 <change-folder>$folder_escaped_rachel<enter>
-macro index \e6 <change-folder>$folder_escaped_aabugher<enter>
+macro index \e2 <change-folder>$folder_escaped_aabugher<enter>
+macro index \e3 <change-folder>$folder_escaped_smb<enter>
+macro index \e4 <change-folder>$folder_escaped_banking<enter>
+macro index \e5 <change-folder>$folder_escaped_market<enter>
+macro index \e6 <change-folder>$folder_escaped_rachel<enter>
 
 
 # Register and label these mailboxes.
