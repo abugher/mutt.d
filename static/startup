@@ -11,5 +11,5 @@
 # folder-hook seems to kick in at that time - either statement can be placed
 # before the folder-hook declarations and the other statement after, and the
 # folder-hooks work.  (Let's just keep them together, though.)
-set folder              = "$folder_aabugher"
+set folder              = "$folder_aaron"
 set spoolfile           = '='
