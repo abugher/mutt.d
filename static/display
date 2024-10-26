@@ -11,12 +11,14 @@ alternative_order text/plain text/enriched text/html text/calendar
 # Remember to use the "copiousoutput" mailcap flag.)
 auto_view text/html text/calendar
 
-#
+# Visual formatting:
 set date_format         = "%a %Y-%m-%d %R"
 set index_format        = "$index_format"
+set strict_threads      = "yes"
+set sort_thread_groups  = "date-received"
 
 # Minimum interval between progress updates, in milliseconds:
-set time_inc = 500
+set time_inc            = 500
 
 # Message headers:
 ignore *
