@@ -1,79 +1,67 @@
-# Allow multiple mailboxes to be specified for 'fcc' or 'record'.
-set fcc_delimiter = ','
+# Variables used here are defined in the mutt wrapper script.
 
-# Make it easy to switch among accounts (<esc> 1, <esc> 2, ...).
-macro index \e1 <change-folder>$folder_escaped_aaron<enter>
-macro index \e2 <change-folder>$folder_escaped_aabugher<enter>
-macro index \e3 <change-folder>$folder_escaped_smb<enter>
-macro index \e4 <change-folder>$folder_escaped_banking<enter>
-macro index \e5 <change-folder>$folder_escaped_market<enter>
-macro index \e6 <change-folder>$folder_escaped_rachel<enter>
+# aaron
+macro index     \e1                     "<change-folder>$folder_escaped_aaron<enter>"
+mailboxes       -label 'aaron'          "$folder_aaron"
+folder-hook     "$folder_aaron"         "set from = $from_aaron"
+folder-hook     "$folder_aaron" "set folder = $folder_escaped_aaron"
+folder-hook     "$folder_aaron" "set record = $record_escaped_aaron,$folder_escaped_aaron"
+folder-hook     "$folder_aaron" "set postponed = $postponed_aaron"
+folder-hook     "$folder_aaron" "set imap_pass = $pass_aaron"
+folder-hook     "$folder_aaron" "set smtp_pass = $pass_aaron"
+folder-hook     "$folder_aaron" "set smtp_url = $smtp_url_aaron"
 
+# aabugher
+macro index     \e2                     "<change-folder>$folder_escaped_aabugher<enter>"
+mailboxes       -label 'aabugher'       "$folder_aabugher"
+folder-hook     "$folder_aabugher"      "set from = $from_aabugher"
+folder-hook     "$folder_aabugher"      "set folder = $folder_escaped_aabugher"
+folder-hook     "$folder_aabugher"      "set record = $record_escaped_aabugher,$folder_escaped_aabugher"
+folder-hook     "$folder_aabugher"      "set postponed = $postponed_aabugher"
+folder-hook     "$folder_aabugher"      "set imap_pass = $pass_aabugher"
+folder-hook     "$folder_aabugher"      "set smtp_pass = $pass_aabugher"
+folder-hook     "$folder_aabugher"      "set smtp_url = $smtp_url_aabugher"
 
-# Register and label these mailboxes.
-mailboxes -label 'aaron'        "$folder_aaron"
-mailboxes -label 'aabugher'     "$folder_aabugher"
-mailboxes -label 'smb'          "$folder_smb"
-mailboxes -label 'banking'      "$folder_banking"
-mailboxes -label 'market'       "$folder_market"
-mailboxes -label 'rachel'       "$folder_rachel"
+# smb
+macro index     \e3                     "<change-folder>$folder_escaped_smb<enter>"
+mailboxes       -label 'smb'            "$folder_smb"
+folder-hook     "$folder_smb"           "set from = $from_smb"
+folder-hook     "$folder_smb"           "set folder = $folder_escaped_smb"
+folder-hook     "$folder_smb"           "set record = $record_escaped_smb,$folder_escaped_smb"
+folder-hook     "$folder_smb"           "set postponed = $postponed_smb"
+folder-hook     "$folder_smb"           "set imap_pass = $pass_smb"
+folder-hook     "$folder_smb"           "set smtp_pass = $pass_smb"
+folder-hook     "$folder_smb"           "set smtp_url = $smtp_url_smb"
 
+# banking
+macro index     \e4                     "<change-folder>$folder_escaped_banking<enter>"
+mailboxes       -label 'banking'        "$folder_banking"
+folder-hook     "$folder_banking"       "set from = $from_banking"
+folder-hook     "$folder_banking"       "set folder = $folder_escaped_banking"
+folder-hook     "$folder_banking"       "set record = $record_escaped_banking,$folder_escaped_banking"
+folder-hook     "$folder_banking"       "set postponed = $postponed_banking"
+folder-hook     "$folder_banking"       "set imap_pass = $pass_banking"
+folder-hook     "$folder_banking"       "set smtp_pass = $pass_banking"
+folder-hook     "$folder_banking"       "set smtp_url = $smtp_url_banking"
 
-# Define each account.
-#
-#   The 'folder' variable is not set by opening a folder, so set it here.
+# market
+macro index     \e5                     "<change-folder>$folder_escaped_market<enter>"
+mailboxes       -label 'market'         "$folder_market"
+folder-hook     "$folder_market"        "set from = $from_market"
+folder-hook     "$folder_market"        "set folder = $folder_escaped_market"
+folder-hook     "$folder_market"        "set record = $record_escaped_market,$folder_escaped_market"
+folder-hook     "$folder_market"        "set postponed = $postponed_market"
+folder-hook     "$folder_market"        "set imap_pass = $pass_market"
+folder-hook     "$folder_market"        "set smtp_pass = $pass_market"
+folder-hook     "$folder_market"        "set smtp_url = $smtp_url_market"
 
-# aaron:
-folder-hook "$folder_aaron"                    "set from       = $from_aaron"
-folder-hook "$folder_aaron"                    "set folder     = $folder_escaped_aaron"
-folder-hook "$folder_aaron"                    "set record     = $record_escaped_aaron,$folder_escaped_aaron"
-folder-hook "$folder_aaron"                    "set postponed  = $postponed_aaron"
-folder-hook "$folder_aaron"                    "set imap_pass  = $pass_aaron"
-folder-hook "$folder_aaron"                    "set smtp_pass  = $pass_aaron"
-folder-hook "$folder_aaron"                    "set smtp_url   = $smtp_url_aaron"
-
-# aabugher:
-folder-hook "$folder_aabugher"                  "set from       = $from_aabugher"
-folder-hook "$folder_aabugher"                  "set folder     = $folder_escaped_aabugher"
-folder-hook "$folder_aabugher"                  "set record     = $record_escaped_aabugher,$folder_escaped_aabugher"
-folder-hook "$folder_aabugher"                  "set postponed  = $postponed_aabugher"
-folder-hook "$folder_aabugher"                  "set imap_pass  = $pass_aabugher"
-folder-hook "$folder_aabugher"                  "set smtp_pass  = $pass_aabugher"
-folder-hook "$folder_aabugher"                  "set smtp_url   = $smtp_url_aabugher"
-
-# spidermonkeyblues:
-folder-hook "$folder_smb"                       "set from       = $from_smb"
-folder-hook "$folder_smb"                       "set folder     = $folder_escaped_smb"
-folder-hook "$folder_smb"                       "set record     = $record_escaped_smb,$folder_escaped_smb"
-folder-hook "$folder_smb"                       "set postponed  = $postponed_smb"
-folder-hook "$folder_smb"                       "set imap_pass  = $pass_smb"
-folder-hook "$folder_smb"                       "set smtp_pass  = $pass_smb"
-folder-hook "$folder_smb"                       "set smtp_url   = $smtp_url_smb"
-
-# aabugher.banking:
-folder-hook "$folder_banking"                   "set from       = $from_banking"
-folder-hook "$folder_banking"                   "set folder     = $folder_escaped_banking"
-folder-hook "$folder_banking"                   "set record     = $record_escaped_banking,$folder_escaped_banking"
-folder-hook "$folder_banking"                   "set postponed  = $postponed_banking"
-folder-hook "$folder_banking"                   "set imap_pass  = $pass_banking"
-folder-hook "$folder_banking"                   "set smtp_pass  = $pass_banking"
-folder-hook "$folder_banking"                   "set smtp_url   = $smtp_url_banking"
-
-# aaronsandroidmarketaccount:
-folder-hook "$folder_market"                    "set from       = $from_market"
-folder-hook "$folder_market"                    "set folder     = $folder_escaped_market"
-folder-hook "$folder_market"                    "set record     = $record_escaped_market,$folder_escaped_market"
-folder-hook "$folder_market"                    "set postponed  = $postponed_market"
-folder-hook "$folder_market"                    "set imap_pass  = $pass_market"
-folder-hook "$folder_market"                    "set smtp_pass  = $pass_market"
-folder-hook "$folder_market"                    "set smtp_url   = $smtp_url_market"
-
-# rlbugher:
-#folder-hook "$folder_rlbugher"                  "set from       = $from_rachel"
-#folder-hook "$folder_rlbugher"                  "set folder     = $folder_escaped_rachel"
-#folder-hook "$folder_rlbugher"                  "set record     = $record_escaped_rachel,$folder_escaped_rachel"
-#folder-hook "$folder_rlbugher"                  "set postponed  = $postponed_rachel"
-#folder-hook "$folder_rlbugher"                  "set imap_pass  = $pass_rachel"
-#folder-hook "$folder_rlbugher"                  "set smtp_pass  = $pass_rachel"
-#folder-hook "$folder_rlbugher"                  "set smtp_url   = $smtp_url_rachel"
-
+# hotmail
+macro index     \e6                     "<change-folder>$folder_escaped_hotmail<enter>"
+mailboxes       -label 'hotmail'        "$folder_hotmail"
+folder-hook     "$folder_hotmail"       "set from = $from_hotmail"
+folder-hook     "$folder_hotmail"       "set folder = $folder_escaped_hotmail"
+folder-hook     "$folder_hotmail"       "set record = $record_escaped_hotmail,$folder_escaped_hotmail"
+folder-hook     "$folder_hotmail"       "set postponed = $postponed_hotmail"
+folder-hook     "$folder_hotmail"       "set imap_pass = $pass_hotmail"
+folder-hook     "$folder_hotmail"       "set smtp_pass = $pass_hotmail"
+folder-hook     "$folder_hotmail"       "set smtp_url = $smtp_url_hotmail"

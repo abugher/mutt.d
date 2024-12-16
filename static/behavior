@@ -15,6 +15,9 @@ set save_name
 #set sort                = "reverse-date-received"
 set forward_format      = "Fw: %s"
 
+# Allow multiple mailboxes to be specified for 'fcc' or 'record'.
+set fcc_delimiter       = ','
+
 set move                = "no"
 set wait_key            = "no"
 

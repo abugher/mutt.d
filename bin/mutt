@@ -3,6 +3,121 @@
 # Does this script handle passwords as variables in a way that leaks them into
 # the process table?
 
+# hosting definitions - used by account definitions
+#   generic
+export inbox_protocol='imaps'
+export inbox_path_standard="INBOX"
+export inbox_path_escaped_standard="${inbox_path_standard}"
+export record_path_standard='Sent'
+export record_path_escaped_standard="${record_path_standard}"
+export postponed_path_standard='Drafts'
+export sending_protocol='smtps'
+#   personal
+export inbox_server_address_personal="neuron-mail.neuronpointer.net"
+export sending_server_address_personal="neuron-mail.neuronpointer.net"
+#   gmail
+export inbox_server_address_gmail='imap.gmail.com'
+#export inbox_path_gmail='[Gmail]/All Mail'
+#export inbox_path_escaped_gmail='[Gmail]/All%20Mail'
+#export inbox_path_escaped_gmail='[Gmail]/All\ Mail'
+export inbox_path_gmail="${inbox_path_standard}"
+export inbox_path_escaped_gmail="${inbox_path_gmail}"
+export record_path_gmail='[Gmail]/Sent Mail'
+export record_path_escaped_gmail='[Gmail]/Sent\ Mail'
+export postponed_path_gmail='[Gmail]/Drafts'
+export sending_server_address_gmail='smtp.gmail.com'
+#   outlook
+#export inbox_server_address_outlook='outlook.office365.com'
+export inbox_server_address_outlook='imap-mail.outlook.com'
+export sending_server_address_outlook='smtp-mail.outlook.com'
+
+# account definitions - must correspond to static/accounts
+#   aaron
+export pass_aaron="$(pass show aaron/email/aaron@bugher.net)"
+export username_aaron="aaron"
+export domain_aaron="neuronpointer.net"
+export from_aaron="${username_aaron}@${domain_aaron}"
+export inbox_server_address_aaron="${inbox_server_address_personal}"
+export sending_server_address_aaron="${sending_server_address_personal}"
+export folder_aaron="${inbox_protocol}://${username_aaron}@${inbox_server_address_personal}/${inbox_path_standard}"
+export folder_escaped_aaron="${inbox_protocol}://${username_aaron}@${inbox_server_address_personal}/${inbox_path_escaped_standard}"
+export record_aaron="${inbox_protocol}://${username_aaron}@${inbox_server_address_personal}/${record_path_standard}"
+export record_escaped_aaron="${inbox_protocol}://${username_aaron}@${inbox_server_address_personal}/${record_path_escaped_standard}"
+export postponed_aaron="${inbox_protocol}://${username_aaron}@${inbox_server_address_personal}/${postponed_path_standard}"
+export smtp_url_aaron="${sending_protocol}://${username_aaron}@${sending_server_address_personal}"
+#   aabugher
+export pass_aabugher="$(pass show aaron/accounts.google.com/aabugher/app_password_mawg)"
+export username_aabugher="aabugher"
+export domain_aabugher="gmail.com"
+export from_aabugher="${username_aabugher}@${domain_aabugher}"
+export inbox_server_address_aabugher="${inbox_server_address_gmail}"
+export sending_server_address_aabugher="${sending_server_address_gmail}"
+export folder_aabugher="${inbox_protocol}://${username_aabugher}@${inbox_server_address_gmail}/${inbox_path_gmail}"
+export folder_escaped_aabugher="${inbox_protocol}://${username_aabugher}@${inbox_server_address_gmail}/${inbox_path_escaped_gmail}"
+export record_aabugher="${inbox_protocol}://${username_aabugher}@${inbox_server_address_gmail}/${record_path_gmail}"
+export record_escaped_aabugher="${inbox_protocol}://${username_aabugher}@${inbox_server_address_gmail}/${record_path_escaped_gmail}"
+export postponed_aabugher="${inbox_protocol}://${username_aabugher}@${inbox_server_address_gmail}/${postponed_path_gmail}"
+export smtp_url_aabugher="${sending_protocol}://${username_aabugher}@${sending_server_address_gmail}"
+#   smb
+export pass_smb="$(pass show aaron/accounts.google.com/spidermonkeyblues/app_password_mawg)"
+export username_smb="spidermonkeyblues"
+export domain_smb="gmail.com"
+export from_smb="${username_smb}@${domain_smb}"
+export inbox_server_address_smb="${inbox_server_address_gmail}"
+export sending_server_address_smb="${sending_server_address_gmail}"
+export folder_smb="${inbox_protocol}://${username_smb}@${inbox_server_address_gmail}/${inbox_path_gmail}"
+export folder_escaped_smb="${inbox_protocol}://${username_smb}@${inbox_server_address_gmail}/${inbox_path_escaped_gmail}"
+export record_smb="${inbox_protocol}://${username_smb}@${inbox_server_address_gmail}/${record_path_gmail}"
+export record_escaped_smb="${inbox_protocol}://${username_smb}@${inbox_server_address_gmail}/${record_path_escaped_gmail}"
+export postponed_smb="${inbox_protocol}://${username_smb}@${inbox_server_address_gmail}/${postponed_path_gmail}"
+export smtp_url_smb="${sending_protocol}://${username_smb}@${sending_server_address_gmail}"
+#   banking
+export pass_banking="$(pass show aaron/accounts.google.com/aabugher.banking/app_password_mawg)"
+export username_banking="aabugher.banking"
+export domain_banking="gmail.com"
+export from_banking="${username_banking}@${domain_banking}"
+export inbox_server_address_banking="${inbox_server_address_gmail}"
+export sending_server_address_banking="${sending_server_address_gmail}"
+export folder_banking="${inbox_protocol}://${username_banking}@${inbox_server_address_gmail}/${inbox_path_gmail}"
+export folder_escaped_banking="${inbox_protocol}://${username_banking}@${inbox_server_address_gmail}/${inbox_path_escaped_gmail}"
+export record_banking="${inbox_protocol}://${username_banking}@${inbox_server_address_gmail}/${record_path_gmail}"
+export record_escaped_banking="${inbox_protocol}://${username_banking}@${inbox_server_address_gmail}/${record_path_escaped_gmail}"
+export postponed_banking="${inbox_protocol}://${username_banking}@${inbox_server_address_gmail}/${postponed_path_gmail}"
+export smtp_url_banking="${sending_protocol}://${username_banking}@${sending_server_address_gmail}"
+#   market
+export pass_market="$(pass show aaron/accounts.google.com/aaronsandroidmarketaccount/app_password_mawg)"
+export username_market="aaronsandroidmarketaccount"
+export domain_market="gmail.com"
+export from_market="${username_market}@${domain_market}"
+export inbox_server_address_market="${inbox_server_address_gmail}"
+export sending_server_address_market="${sending_server_address_gmail}"
+export folder_market="${inbox_protocol}://${username_market}@${inbox_server_address_gmail}/${inbox_path_gmail}"
+export folder_escaped_market="${inbox_protocol}://${username_market}@${inbox_server_address_gmail}/${inbox_path_escaped_gmail}"
+export record_market="${inbox_protocol}://${username_market}@${inbox_server_address_gmail}/${record_path_gmail}"
+export record_escaped_market="${inbox_protocol}://${username_market}@${inbox_server_address_gmail}/${record_path_escaped_gmail}"
+export postponed_market="${inbox_protocol}://${username_market}@${inbox_server_address_gmail}/${postponed_path_gmail}"
+export smtp_url_market="${sending_protocol}://${username_market}@${sending_server_address_gmail}"
+#   hotmail
+export pass_hotmail="$(pass show aaron/hotmail.com/spidr_mnky@hotmail.com)"
+export username_hotmail="spidr_mnky"
+export domain_hotmail="hotmail.com"
+export from_hotmail="${username_hotmail}@${domain_hotmail}"
+export inbox_server_address_hotmail="${inbox_server_address_outlook}"
+export sending_server_address_hotmail="${sending_server_address_outlook}"
+export folder_hotmail="${inbox_protocol}://${from_hotmail}@${inbox_server_address_outlook}/${inbox_path_standard}"
+export folder_escaped_hotmail="${inbox_protocol}://${from_hotmail}@${inbox_server_address_outlook}/${inbox_path_escaped_standard}"
+export record_hotmail="${inbox_protocol}://${from_hotmail}@${inbox_server_address_outlook}/${record_path_standard}"
+export record_escaped_hotmail="${inbox_protocol}://${from_hotmail}@${inbox_server_address_outlook}/${record_path_escaped_standard}"
+export postponed_hotmail="${inbox_protocol}://${from_hotmail}@${inbox_server_address_outlook}/${postponed_path_standard}"
+export smtp_url_hotmail="${sending_protocol}://${from_hotmail}@${sending_server_address_outlook}"
+
+
+declare -A known_mutts
+known_mutts=(
+  [standard]='/usr/bin/mutt'
+  [termux]='/data/data/com.termux/files/usr/bin/mutt'
+)
+
 
 function main() {
   mutt="${MUTT:-$(find_mutt)}"
@@ -70,88 +185,6 @@ function fail() {
   printf "ERROR:  %s\n" "${1}" >&2
   exit 1
 }
-
-
-export pass_aaron="$(pass show aaron/email/aaron@bugher.net)"
-export pass_aabugher="$(pass show aaron/accounts.google.com/aabugher/app_password_mawg)"
-export pass_smb="$(pass show aaron/accounts.google.com/spidermonkeyblues/app_password_mawg)"
-export pass_banking="$(pass show aaron/accounts.google.com/aabugher.banking/app_password_mawg)"
-export pass_market="$(pass show aaron/accounts.google.com/aaronsandroidmarketaccount/app_password_mawg)"
-
-#export folder_part_2='@imap.gmail.com/[Gmail]/All Mail'
-#export folder_part_2_escaped='@imap.gmail.com/[Gmail]/All%20Mail'
-export folder_part_2='@imap.gmail.com/INBOX'
-export folder_part_2_escaped='@imap.gmail.com/INBOX'
-
-export folder_part_0='imaps://'
-
-export folder_part_1_aabugher="${folder_part_0}aabugher"
-export folder_part_1_smb="${folder_part_0}spidermonkeyblues"
-export folder_part_1_banking="${folder_part_0}aabugher.banking"
-export folder_part_1_market="${folder_part_0}aaronsandroidmarketaccount"
-export folder_part_1_aaron="${folder_part_0}aaron"
-
-export folder_aabugher="${folder_part_1_aabugher}${folder_part_2}"
-export folder_smb="${folder_part_1_smb}${folder_part_2}"
-export folder_banking="${folder_part_1_banking}${folder_part_2}"
-export folder_market="${folder_part_1_market}${folder_part_2}"
-export folder_aaron="${folder_part_1_aaron}@neuron-mail.neuronpointer.net/INBOX"
-
-export folder_escaped_aabugher="${folder_part_1_aabugher}${folder_part_2_escaped}"
-export folder_escaped_smb="${folder_part_1_smb}${folder_part_2_escaped}"
-export folder_escaped_banking="${folder_part_1_banking}${folder_part_2_escaped}"
-export folder_escaped_market="${folder_part_1_market}${folder_part_2_escaped}"
-export folder_escaped_aaron="${folder_part_1_aaron}@neuron-mail.neuronpointer.net/INBOX"
-
-export record_part_0="${folder_part_0}"
-export record_part_2='@imap.gmail.com/[Gmail]/Sent Mail'
-export record_part_2_escaped='@imap.gmail.com/[Gmail]/Sent\ Mail'
-#export record_part_2='@imap.gmail.com/Sent'
-#export record_part_2_escaped='@imap.gmail.com/Sent'
-
-export record_aabugher="${record_part_0}aabugher${record_part_2}"
-export record_smb="${record_part_0}spidermonkeyblues${record_part_2}"
-export record_banking="${record_part_0}aabugher.banking${record_part_2}"
-export record_market="${record_part_0}aaronsandroidmarketaccount${record_part_2}"
-export record_aaron="${record_part_0}aaron@neuron-mail.neuronpointer.net/Sent"
-
-export record_escaped_aabugher="${record_part_0}aabugher${record_part_2_escaped}"
-export record_escaped_smb="${record_part_0}spidermonkeyblues${record_part_2_escaped}"
-export record_escaped_banking="${record_part_0}aabugher.banking${record_part_2_escaped}"
-export record_escaped_market="${record_part_0}aaronsandroidmarketaccount${record_part_2_escaped}"
-export record_escaped_aaron="${record_part_0}aaron@neuron-mail.neuronpointer.net/Sent"
-
-export postponed_part_0="${folder_part_0}"
-export postponed_part_2='@imap.gmail.com/[Gmail]/Drafts'
-
-export postponed_aabugher="${postponed_part_0}aabugher${postponed_part_2}"
-export postponed_smb="${postponed_part_0}spidermonkeyblues${postponed_part_2}"
-export postponed_banking="${postponed_part_0}aabugher.banking${postponed_part_2}"
-export postponed_market="${postponed_part_0}aaronsandroidmarketaccount${postponed_part_2}"
-export postponed_aaron="${postponed_part_0}aaron@neuron-mail.neuronpointer.net/Drafts"
-
-export smtp_url_part_0='smtps://'
-export smtp_url_part_2='@smtp.gmail.com'
-
-export smtp_url_aabugher="${smtp_url_part_0}aabugher${smtp_url_part_2}"
-export smtp_url_smb="${smtp_url_part_0}spidermonkeyblues${smtp_url_part_2}"
-export smtp_url_banking="${smtp_url_part_0}aabugher.banking${smtp_url_part_2}"
-export smtp_url_market="${smtp_url_part_0}aaronsandroidmarketaccount${smtp_url_part_2}"
-export smtp_url_aaron="${smtp_url_part_0}aaron@neuron-mail.neuronpointer.net"
-
-export from_part_2='@gmail.com'
-
-export from_aabugher="aabugher${from_part_2}"
-export from_smb="spidermonkeyblues${from_part_2}"
-export from_banking="aabugher.banking${from_part_2}"
-export from_market="aaronsandroidmarketaccount${from_part_2}"
-export from_aaron="aaron@bugher.net"
-
-declare -A known_mutts
-known_mutts=(
-  [standard]='/usr/bin/mutt'
-  [termux]='/data/data/com.termux/files/usr/bin/mutt'
-)
 
 
 main "${@}"
