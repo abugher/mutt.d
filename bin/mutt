@@ -27,8 +27,7 @@ export record_path_escaped_gmail='[Gmail]/Sent\ Mail'
 export postponed_path_gmail='[Gmail]/Drafts'
 export sending_server_address_gmail='smtp.gmail.com'
 #   outlook
-#export inbox_server_address_outlook='outlook.office365.com'
-export inbox_server_address_outlook='imap-mail.outlook.com'
+export inbox_server_address_outlook='outlook.office365.com'
 export sending_server_address_outlook='smtp-mail.outlook.com'
 
 # account definitions - must correspond to static/accounts
@@ -98,7 +97,7 @@ export record_escaped_market="${inbox_protocol}://${username_market}@${inbox_ser
 export postponed_market="${inbox_protocol}://${username_market}@${inbox_server_address_gmail}/${postponed_path_gmail}"
 export smtp_url_market="${sending_protocol}://${username_market}@${sending_server_address_gmail}"
 #   hotmail
-export pass_hotmail="$(pass show aaron/hotmail.com/spidr_mnky@hotmail.com)"
+export pass_hotmail="$(pass show aaron/hotmail.com/app_password_mutt)"
 export username_hotmail="spidr_mnky"
 export domain_hotmail="hotmail.com"
 export from_hotmail="${username_hotmail}@${domain_hotmail}"
