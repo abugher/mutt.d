@@ -34,7 +34,8 @@ export sending_server_address_outlook='smtp-mail.outlook.com'
 #   aaron
 export pass_aaron="$(pass show aaron/email/aaron@bugher.net)"
 export username_aaron="aaron"
-export domain_aaron="neuronpointer.net"
+#export domain_aaron="neuronpointer.net"
+export domain_aaron="bugher.net"
 export from_aaron="${username_aaron}@${domain_aaron}"
 export inbox_server_address_aaron="${inbox_server_address_personal}"
 export sending_server_address_aaron="${sending_server_address_personal}"
