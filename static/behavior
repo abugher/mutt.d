@@ -5,50 +5,58 @@ set askcc
 set autoedit
 set auto_tag
 unset confirmappend
-set edit_headers
-set include             = "yes"
-set ispell              = "aspell check "
-set markers             = "no"
-set save_empty          = "no"
+set include                                             = "yes"
+set ispell                                              = "aspell check "
+set markers                                             = "no"
+set save_empty                                          = "no"
 set save_name
 # See macros for sorting control.
-#set sort                = "reverse-date-received"
-set forward_format      = "Fw: %s"
+#set sort                                                = "reverse-date-received"
+set forward_format                                      = "Fw: %s"
 
 # Allow multiple mailboxes to be specified for 'fcc' or 'record'.
-set fcc_delimiter       = ','
+set fcc_delimiter                                       = ','
 
-set move                = "no"
-set wait_key            = "no"
+set move                                                = "no"
+set wait_key                                            = "no"
+
+set text_flowed
+set send_multipart_alternative
+set send_multipart_alternative_filter                   = "/usr/bin/printf 'text/html\n\n'; /usr/bin/markdown"
+set edit_headers
+set editor                                              = "/usr/bin/vim -c 'set textwidth=72' -c 'set background=dark' -c 'set mouse=' -c 'set spell' -c 'set formatoptions+=w'"
+
+# Use one directory for header and message cache.  Create this directory before
+# running mutt, or mutt will create a database file instead, even if
+# message_cachedir is specified first, and messages will not be cached.
+
+# mutt 2.2.14 from source does not recognize these.
+set message_cachedir                                    = "~/.mutt_cache"
+set header_cache                                        = "~/.mutt_cache"
+
+# How long to display messages.  Also delays opening any mailbox by this long.
+set sleep_time                                          = 1
+
+
+exec last-entry
 
 # Key spec is case insensitive.
 
 # vi-like paging
 #bind index \Cb	previous-page
 #bind index \Cf	next-page
-bind index \Cb	half-up
-bind index \Cf	half-down
-# Builtin:  1<enter>    to jump to first message.
-# Builtin:  *           to jump to last message.
-bind pager \Cb	half-up
-bind pager \Cf	half-down
+bind index \Cb	                                        half-up
+bind index \Cf	                                        half-down
+# Builtin:  1<enter>                                     to jump to first message.
+# Builtin:  *                                            to jump to last message.
+bind pager \Cb	                                        half-up
+bind pager \Cf	                                        half-down
 
-set editor="/usr/bin/vim -c 'set textwidth=72' -c 'set background=dark' -c 'set mouse=' -c 'set spell' "
 # These are intuitive, but conflict with next/prev message bindings.
-#bind pager j next-line
-#bind pager k previous-line
-bind pager G bottom
+#bind pager j                                            next-line
+#bind pager k                                            previous-line
+bind pager G                                            bottom
 
 # up and down keys
-bind pager <down> next-line
-bind pager <up> previous-line
-
-# Use one directory for header and message cache.  Create this directory before
-# running mutt, or mutt will create a database file instead, even if
-# message_cachedir is specified first, and messages will not be cached.
-set message_cachedir = "~/.mutt_cache"
-set header_cache = "~/.mutt_cache"
-
-exec last-entry
-# How long to display messages.  Also delays opening any mailbox by this long.
-set sleep_time          = 1
+bind pager <down>                                       next-line
+bind pager <up>                                         previous-line

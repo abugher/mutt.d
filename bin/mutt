@@ -114,6 +114,7 @@ export smtp_url_hotmail="${sending_protocol}://${from_hotmail}@${sending_server_
 
 declare -A known_mutts
 known_mutts=(
+#  [built]='/home/aaron/code/gitlab.com/muttmua/mutt/mutt'
   [standard]='/usr/bin/mutt'
   [termux]='/data/data/com.termux/files/usr/bin/mutt'
 )

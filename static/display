@@ -21,7 +21,7 @@ set sort_thread_groups  = "date-received"
 set time_inc            = 500
 
 # Message headers:
-ignore *
-unignore Message-ID: Date: From: To: Cc: Subject:
-unhdr_order *
-hdr_order Message-ID: To: Cc: Date: From: Subject:
+ignore                  *
+unignore                date: from: reply-to: to: cc: bcc: message-id: subject:
+unhdr_order             *
+hdr_order               date: from: reply-to: to: cc: bcc: message-id: subject:

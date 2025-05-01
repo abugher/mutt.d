@@ -1,6 +1,7 @@
 # Usage
 
 * Install and configure `pass`.
+* Install `markdown`.
 * Clone this repo to `~/.mutt.d`.
 * Make `~/.muttrc` a symlink pointing to `static/muttrc`.
 * Copy the lines from `system/mailcap` to `~/.mailcap`.
