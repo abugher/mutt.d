@@ -1,7 +1,7 @@
 #text/plain; cat %s; copiousoutput; needsterminal
 # html2text is hard to get for Termux.
 #text/html; html2text %s; copiousoutput; needsterminal
-text/html; links -dump %s; nametemplate=%s.html; copiousoutput; needsterminal
+text/html; iconv -f '%{charset}' -t "${LANG#*.}" %s | links -dump %s; nametemplate=%s.html; copiousoutput; needsterminal
 #audio/*; mplayer %s; needsterminal
 #video/*; mplayer --volume 0 --osd-level 3 %s; needsterminal
 #image/*; feh %s; needsterminal
