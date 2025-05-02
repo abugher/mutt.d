@@ -32,7 +32,7 @@ export sending_server_address_outlook='smtp-mail.outlook.com'
 
 # account definitions - must correspond to static/accounts
 #   aaron
-export pass_aaron="$(pass show aaron/email/aaron@bugher.net)"
+export pass_aaron="$(pass show shared/email/aaron@bugher.net)"
 export username_aaron="aaron"
 #export domain_aaron="neuronpointer.net"
 export domain_aaron="bugher.net"

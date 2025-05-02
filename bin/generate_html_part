@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# MIME content-type declaration
+/usr/bin/printf 'text/html\n\n'
+
+# Convert to HTML, then make the signature line look like it does in plain text.
+/usr/bin/markdown \
+| sed 's/^<p>-- $/<p>-- <br>/'

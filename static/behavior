@@ -22,7 +22,7 @@ set wait_key                                            = "no"
 
 set text_flowed
 set send_multipart_alternative
-set send_multipart_alternative_filter                   = "/usr/bin/printf 'text/html\n\n'; /usr/bin/markdown"
+set send_multipart_alternative_filter                   = "~/.mutt.d/bin/generate_html_part"
 set edit_headers
 set editor                                              = "/usr/bin/vim -c 'set textwidth=72' -c 'set background=dark' -c 'set mouse=' -c 'set spell' -c 'set formatoptions+=w'"
 
