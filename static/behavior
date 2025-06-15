@@ -13,6 +13,8 @@ set save_name
 # See macros for sorting control.
 #set sort                                                = "reverse-date-received"
 set forward_format                                      = "Fw: %s"
+# Forward full attachments.
+set mime_forward
 
 # Allow multiple mailboxes to be specified for 'fcc' or 'record'.
 set fcc_delimiter                                       = ','
