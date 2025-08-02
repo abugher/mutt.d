@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# BUGS
+#   * Lines with a leading number followed by a period get converted to ordered
+#   list entries.  The numbering is not preserved.  Any unnumbered line will
+#   end the ordered list.  So if one of your numbered points includes a
+#   paragraph break, the numbering starts over at "1.  " at the next numbered
+#   line.  WORKAROUND:  Use different punctuation.  "(1)  " seems to be treated
+#   as text.
+
 # MIME content-type declaration
 /usr/bin/printf 'text/html\n\n'
 
