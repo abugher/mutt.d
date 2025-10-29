@@ -12,7 +12,7 @@ alternative_order text/plain text/enriched text/html text/calendar
 auto_view text/html text/calendar
 
 # Visual formatting:
-set date_format         = "%a %Y-%m-%d %R"
+set date_format         = "%a %Y-%m-%d %R %z"
 set index_format        = "$index_format"
 set strict_threads      = "yes"
 set sort_thread_groups  = "date-received"
