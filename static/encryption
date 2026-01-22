@@ -1,0 +1,49 @@
+unset crypt_use_gpgme
+
+# Override this if sending from a device with a different key.
+set pgp_default_key                             = 14685BCB71F8D8B9613D87995A0E047D5DE6B2D2
+
+# Hit 'p' before sending to be prompted to sign or encrypt messages.  If that
+# is too much trouble, use crypt_autosign and crypt_autoencrypt.
+
+# crypt_autosign should be fine, if only using one device, where the signing
+# key is always available.
+set crypt_autosign                              = yes
+
+# crypt_autoencrypt would get annoying fast, since I don't have a public key
+# for most recipients.  Unfortunately, instead of giving up, this option causes
+# mutt to prompt for the non-existent key.
+set crypt_autoencrypt                           = no
+
+
+# Below is originally copied from one of these two identical files:
+#   
+#   /etc/Muttrc.d/gpg.rc 
+#   /usr/share/doc/mutt/examples/gpg.rc
+#   
+# If things fall apart with a newer OS, check those for updated
+# recommendations.  mutt docs say to source the `gpg.rc` that comes with mutt,
+# but at least the version of that file provided on Debian Trixie starts with
+# this line, which I think will invalidate all of the rest of the file:
+#
+#   set crypt_use_gpgme
+#
+# When a message is ready to send, hit 'p' for an encryption/signing dialogue.
+# Without the block below, 'p' instead offers to print.
+#
+# These notes are from 2026-01-21.
+
+set pgp_decode_command="gpg --status-fd=2 %?p?--passphrase-fd 0 --pinentry-mode=loopback? --no-verbose --quiet --batch --output - %f"
+set pgp_verify_command="gpg --status-fd=2 --no-verbose --quiet --batch --output - --verify %s %f"
+set pgp_decrypt_command="gpg --status-fd=2 %?p?--passphrase-fd 0 --pinentry-mode=loopback? --no-verbose --quiet --batch --output - %f"
+set pgp_sign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0 --pinentry-mode=loopback? --armor --detach-sign --textmode %?a?-u %a? %f"
+set pgp_clearsign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0 --pinentry-mode=loopback? --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg %?p?--passphrase-fd 0 --pinentry-mode=loopback? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_import_command="gpg --no-verbose --import %f"
+set pgp_export_command="gpg --no-verbose --export --armor %r"
+set pgp_verify_key_command="gpg --verbose --batch --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-keys %r"
+set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-secret-keys %r"
+set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
+set pgp_check_gpg_decrypt_status_fd
