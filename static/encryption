@@ -59,11 +59,11 @@ set pgp_default_key                             = 14685BCB71F8D8B9613D87995A0E04
 # crypt_autosign should be fine, if only using one device, where the signing
 # key is always available.  Override this with "send-hook" for people with
 # known problems, like Outlook users.
-set crypt_autosign                              = yes
+set crypt_autosign
 
 # crypt_autoencrypt would get annoying fast, since I don't have a public key
 # for most recipients.
-set crypt_autoencrypt                           = no
+unset crypt_autoencrypt
 
 # This seems better.  Encrypt if I have the key for every recipient.
-set crypt_opportunistic_encrypt                 = yes
+set crypt_opportunistic_encrypt
