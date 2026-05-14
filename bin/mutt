@@ -1,7 +1,4 @@
 #!/bin/bash
-#
-# Does this script handle passwords as variables in a way that leaks them into
-# the process table?
 
 # hosting definitions - used by account definitions
 #   generic
