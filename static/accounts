@@ -4,12 +4,12 @@
 macro index     \e1                     "<change-folder>$folder_escaped_aaron<enter>"
 mailboxes       -label 'aaron'          "$folder_aaron"
 folder-hook     "$folder_aaron"         "set from = $from_aaron"
-folder-hook     "$folder_aaron" "set folder = $folder_escaped_aaron"
-folder-hook     "$folder_aaron" "set record = $record_escaped_aaron,$folder_escaped_aaron"
-folder-hook     "$folder_aaron" "set postponed = $postponed_aaron"
-folder-hook     "$folder_aaron" "set imap_pass = $pass_aaron"
-folder-hook     "$folder_aaron" "set smtp_pass = $pass_aaron"
-folder-hook     "$folder_aaron" "set smtp_url = $smtp_url_aaron"
+folder-hook     "$folder_aaron"         "set folder = $folder_escaped_aaron"
+folder-hook     "$folder_aaron"         "set record = $record_escaped_aaron,$folder_escaped_aaron"
+folder-hook     "$folder_aaron"         "set postponed = $postponed_aaron"
+folder-hook     "$folder_aaron"         "set imap_pass = $pass_aaron"
+folder-hook     "$folder_aaron"         "set smtp_pass = $pass_aaron"
+folder-hook     "$folder_aaron"         "set smtp_url = $smtp_url_aaron"
 
 # aabugher
 macro index     \e2                     "<change-folder>$folder_escaped_aabugher<enter>"
