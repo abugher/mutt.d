@@ -62,12 +62,8 @@ set pgp_default_key                             = 14685BCB71F8D8B9613D87995A0E04
 set crypt_autosign                              = yes
 
 # crypt_autoencrypt would get annoying fast, since I don't have a public key
-# for most recipients.  Unfortunately, instead of giving up, this option causes
-# mutt to prompt for the non-existent key.
-#
-# From the docs:  
-# 
-#       This is probably only useful in connection to the “send-hook” command.
-#
-# I guess that could be useful for always encrypting messages to specific people.
+# for most recipients.
 set crypt_autoencrypt                           = no
+
+# This seems better.  Encrypt if I have the key for every recipient.
+set crypt_opportunistic_encrypt                 = yes
