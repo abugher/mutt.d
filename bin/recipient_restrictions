@@ -8,7 +8,13 @@
 # Some decisions based on settings are only made the FIRST time the Compose
 # interface is shown.  If you hit 'e' to edit a message again, and you add
 # recipients, send2-hook will react, but the changed setting may have no
-# effect.  See notes for crypt_autosign, below in particular.
+# effect.
+#
+# For example, crypt_autosign affects the decision of whether to automatically
+# sign a message.  That decision is only made the FIRST time the Compose
+# interface is shown.  If you press 'e' to edit, add a recipient listed in
+# no_crypt_autosign, then save and quit the editor, your message will still be
+# signed.  Hit 'p' for PGP options to rectify the situation yourself.
 
 
 
@@ -18,13 +24,15 @@ function main() {
   # If an option is handled here, any occurrence in static configuration should
   # be commented out and augmented with comments referring to this script.
 
-  # See comments on LIMITATIONS near the top of this script.  crypt_autosign
-  # affects the decision of whether to automatically sign a message.  That
-  # decision is only made the FIRST time the Compose interface is shown.  If
-  # you press 'e' to edit, add a recipient listed in no_crypt_autosign, then
-  # save and quit the editor, your message will still be signed.  Hit 'p' for
-  # PGP options to rectify the situation yourself.
-  restrict_option 'crypt_autosign' 'set'
+  # restrict_option     option                          default
+
+  # PGP signing to listed recipients will not just fail but will break
+  # communication entirely.
+  restrict_option       'crypt_autosign'                'set'
+
+  # I may have public keys for listed recipients, but they do not use their
+  # keys for encrypted mail, so encrypting messages will break communication.
+  restrict_option       'crypt_opportunistic_encrypt'   'set'
 }
 
 

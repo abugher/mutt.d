@@ -67,5 +67,10 @@ set pgp_default_key                             = 14685BCB71F8D8B9613D87995A0E04
 # for most recipients.
 unset crypt_autoencrypt
 
-# This seems better.  Encrypt if I have the key for every recipient.
-set crypt_opportunistic_encrypt
+# This seems better.  Messages can be encrypted if I have the key for every
+# recipient.  In practice, this still creates problems.  I have keys for some
+# people for non-email purposes.  Encrypting mail unexpectedly will break
+# communication.
+#
+# Leave this commented, but see:  restrictions/no_crypt_opportunistic_encrypt
+# set crypt_opportunistic_encrypt
