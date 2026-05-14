@@ -1,0 +1,46 @@
+#!/bin/bash
+#
+# List plain addresses in recipient_categories/* .  Process those here into
+# hook statements.
+
+# Use send2-hook, not send-hook.  send-hook fires BEFORE editing.  send2-hook
+# fires AFTER editing.
+
+# WARNING:  If you hit 'e' to edit a message again, and you add recipients,
+# even though send2-hook should catch that, some settings will have no effect.
+# In particular, 'crypt_autosign' affects the decision of whether to
+# automatically sign a message, but that decision is only made the FIRST time
+# the "Compose" screen is shown.  If you press 'e' to edit, add a recipient who
+# can't handle signing, then save and quit the editor, mutt will be prepared to
+# break your communication unless you hit 'p' for PGP options and rectify the
+# situation yourself.
+
+# Always set a default hook matching ".", or the effect of the most recent hook
+# will linger.  Scope of effect is not limited to the current message.
+
+
+function main() {
+  no_gpg
+}
+
+
+function no_gpg() {
+  # No PGP.  PGP signing/encrypting messages to these recipients will not just
+  # fail; it will break communication entirely.
+
+  # Do sign if no recipient is on the restricted list.
+  printf "%s\n" "send2-hook . 'set crypt_autosign'"
+  while read address; do
+    target="$(build_target "${address}")"
+    # Do not sign if any recipient is on the restricted list.
+    printf "%s\n" "send2-hook '~C ${target}' 'unset crypt_autosign'"
+  done < ~/.mutt.d/recipient_categories/no_pgp
+}
+
+
+function build_target() {
+  printf '%s' "^${1}\$" | sed 's#\.#\\.#g'
+}
+
+
+main "${@}"

@@ -59,7 +59,9 @@ set pgp_default_key                             = 14685BCB71F8D8B9613D87995A0E04
 # crypt_autosign should be fine, if only using one device, where the signing
 # key is always available.  Override this with "send-hook" for people with
 # known problems, like Outlook users.
-set crypt_autosign
+#
+# See bin/recipient_restrictions .  Don't bother setting this statically.
+#set crypt_autosign
 
 # crypt_autoencrypt would get annoying fast, since I don't have a public key
 # for most recipients.
