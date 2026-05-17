@@ -46,8 +46,8 @@ function restrict_option() {
   option="${1}"
   default="${2}"
 
-  yes_list="${restrictions}/yes_${option}"
-  no_list="${restrictions}/no_${option}"
+  yes_list="${restrictions}/list/yes_${option}"
+  no_list="${restrictions}/list/no_${option}"
 
   # Always set a default hook matching ".", or the effect of the most recent
   # hook will linger.  Scope is not limited to the current message.
