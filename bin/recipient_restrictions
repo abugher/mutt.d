@@ -46,9 +46,6 @@ function restrict_option() {
   option="${1}"
   default="${2}"
 
-  yes_list="${restrictions}/list/yes_${option}"
-  no_list="${restrictions}/list/no_${option}"
-
   # Always set a default hook matching ".", or the effect of the most recent
   # hook will linger.  Scope is not limited to the current message.
 
@@ -57,20 +54,37 @@ function restrict_option() {
 
   printf "%s\n" "send2-hook . '${default} ${option}'"
 
+  yes_list_plain="${restrictions}/plain/yes_${option}"
+  no_list_plain="${restrictions}/plain/no_${option}"
+  yes_list_regex="${restrictions}/regex/yes_${option}"
+  no_list_regex="${restrictions}/regex/no_${option}"
+
+
+  # <(grep -vE '^#|^$' "${file}")
   # Enable option for recipients on the yes list, if any.
-  if test -e "${yes_list}"; then
+  if test -e "${yes_list_plain}"; then
     while read address; do
       target="$(build_target "${address}")"
       printf "%s\n" "send2-hook '~C ${target}' 'set ${option}'"
-    done < "${yes_list}"
+    done < <(grep -vE '^#|^$' "${yes_list_plain}")
+  fi
+  if test -e "${yes_list_regex}"; then
+    while read regex; do
+      printf "%s\n" "send2-hook '${regex}' 'set ${option}'"
+    done < <(grep -vE '^#|^$' "${yes_list_regex}")
   fi
 
   # Disable option for recipients on the no list, if any.
-  if test -e "${no_list}"; then
+  if test -e "${no_list_plain}"; then
     while read address; do
       target="$(build_target "${address}")"
       printf "%s\n" "send2-hook '~C ${target}' 'unset ${option}'"
-    done < "${no_list}"
+    done < <(grep -vE '^#|^$' "${no_list_plain}")
+  fi
+  if test -e "${no_list_regex}"; then
+    while read regex; do
+      printf "%s\n" "send2-hook '${regex}' 'unset ${option}'"
+    done < <(grep -vE '^#|^$' "${no_list_regex}")
   fi
 }
 
