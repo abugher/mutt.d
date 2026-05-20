@@ -9,7 +9,7 @@
 #   as text.
 
 # MIME content-type declaration
-/usr/bin/printf 'text/html\n\n'
+printf 'text/html\n\n'
 
 # Prevent markdown from misinterpreting the signature separator.
 sed 's/^-- $/\n-- \n/' | markdown
