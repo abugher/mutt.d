@@ -29,6 +29,14 @@ Executable material including scripts to produce configuration lines.
 
 Filters used for sorting messages by color.  These are also used to mark messages for automatic removal, so that messages ready to be removed are colored appropriately.
 
+## restrictions/plain
+
+Configuration for `bin/recipient_restrictions` to prevent signing, encryption, or other actions, in cases in which those actions would break communication.  (Some recipients have GPG keys on my keyring, but do not use them for encrypted mail.  Some recipients use a client that simply breaks if it receives a signed message.)
+
+## restrictions/regex
+
+The same, but using regular expressions to cover multiple recipients.
+
 ## system
 
 Files required or suggested to be installed in the local environment but not part of mutt configuration.
